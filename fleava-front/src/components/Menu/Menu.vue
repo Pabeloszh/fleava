@@ -1,5 +1,6 @@
 <template>
 <div>
+    <div class="grayScale"></div>
     <div class="overlay">
         <div class="main">
             <h1>Home</h1>
@@ -63,6 +64,7 @@ export default {
     methods: {
         toggleMenu(){
             document.querySelector('.menu-button').classList.toggle('menu-active');
+            document.querySelector('.grayScale').classList.toggle('grayScale-active');
             document.querySelector('.overlay').classList.toggle('overlay-active');
         }
     }

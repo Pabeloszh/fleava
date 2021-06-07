@@ -1,5 +1,6 @@
 .navbar{
     color:transparent;
+    z-index: 12;
     position:fixed;
     top:7vh;
     padding:0 18vw 0 10vw;
@@ -31,7 +32,7 @@
         }
     }
 }
-@media only screen and (max-width:991px){
+@media only screen and (max-width:992px){
     .navbar{
         div{
             display:none;
