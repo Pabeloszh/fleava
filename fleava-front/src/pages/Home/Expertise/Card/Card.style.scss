@@ -1,16 +1,21 @@
 .card-container{
-    width: 400px;
-    // flex-basis: 36%;
-    position:relative;
-    box-sizing: border-box;
-    margin-right: 60px;
+    // width: 400px;
+	// flex-basis:400px;
+	position: relative;
+	box-sizing: border-box;
+	margin-right: 0;
+	padding: 15px;
+	display: inline-block;
+	white-space: normal;
     img{
-        width:100%;
+        width:36vw;
+        // width:100%;
         height:400px;
         object-fit: cover;
         margin-bottom:75px;
     }
     .desc{
+        width:36vw;
         display:flex;
         align-items: flex-start;
         font-family: 'Graphik', Arial, Helvetica, sans-serif;

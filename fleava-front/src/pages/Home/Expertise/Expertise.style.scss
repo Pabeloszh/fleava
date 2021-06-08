@@ -1,9 +1,9 @@
 .expertise-container{
-    padding:160px 0 120px;
+    width: 100%;
     background-color:#000;
-    position: relative;
+    padding: 160px 0 120px;
     .desc{
-        padding: 0 10vw 0 22.5vw;
+        padding: 0 10vw 0 calc(22.5vw + 28px );
         color: #fff;
         font-family: 'Graphik', Arial, Helvetica, sans-serif;
         h3{
@@ -31,9 +31,20 @@
             }
         }
     }
-    .carousel{
-        width:100%;
-        display:flex;
+    .carousel-container{
+        padding: 0 calc(22.5vw + 18px );
+        overflow: hidden;
+        .carousel{
+            pointer-events: none;
+            // transition: all 500ms ease;
+            width:100%;
+            display: block;
+            box-sizing: border-box;
+            flex-flow: wrap;
+            white-space: nowrap;
+    
+        }
+
     }
 }
 @media only screen and (max-width:992px){
