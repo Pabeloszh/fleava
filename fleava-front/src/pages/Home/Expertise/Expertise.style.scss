@@ -1,0 +1,54 @@
+.expertise-container{
+    padding:160px 0 120px;
+    background-color:#000;
+    position: relative;
+    .desc{
+        padding: 0 10vw 0 22.5vw;
+        color: #fff;
+        font-family: 'Graphik', Arial, Helvetica, sans-serif;
+        h3{
+            margin: 25px 0;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        div{
+            display:flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            h2{
+                margin: 42px 0;
+                font-weight: 200;
+                font-size: 42px;
+                line-height: 54px;
+                span{
+                    text-decoration: underline;
+                }
+            }
+            p{
+                font-size:16px;
+            }
+        }
+    }
+    .carousel{
+        width:100%;
+        display:flex;
+    }
+}
+@media only screen and (max-width:992px){
+    .expertise-container{
+        .desc{
+            div{
+                flex-direction: column;
+                align-items: flex-start;
+                h2{
+                    margin: 0 0 28px 0;
+                    font-size: 28px;
+                    line-height: 1.4;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
