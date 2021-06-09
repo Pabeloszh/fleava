@@ -1,13 +1,32 @@
 <template>
-    <div>
-        <div class="slider">
-            <Slide/>
+    <div class='main-s-container'>
+        <div class="slider-container">
+            <div class="slider">
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+                <Slide/>
+            </div>
         </div>
         <div class="slider-nav">
             <h3 class="prev" @mousemove="circlePrevActive" @mouseleave="circleInactive('prev')">Prev</h3>
             <span class="circle-prev"></span>
             <hr>
-            <h3 class="next" @mousemove="circleNextActive" @mouseleave="circleInactive('next')">Next</h3>
+            <h3 class="next" @mousemove="circleNextActive" @mouseleave="circleInactive('next')" @click="nextSlide">Next</h3>
             <span class="circle-next"></span>
         </div>
     </div>
@@ -22,6 +41,7 @@ export default {
         return{
             circleX: 0,
             circleY: 0,
+            currSlide: 1,
         }
     },
     methods:{
@@ -41,6 +61,10 @@ export default {
         circleInactive(circle){
             document.querySelector(`.circle-${circle}`).classList.remove('circle-active');
         },
+        nextSlide(){
+            document.querySelector('.slider').style.transform = `translateX(-${document.querySelector('.slider').clientWidth * this.currSlide}px)`;
+            this.currSlide++
+        }
     }
 }
 </script>

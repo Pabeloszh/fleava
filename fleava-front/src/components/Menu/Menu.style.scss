@@ -46,10 +46,11 @@
 
 .menu-button{
     position:fixed;
+    box-sizing: unset;
     z-index: 12;
     padding:20px;
     top:calc(50vh - 20px);
-    right:2%;
+    right:2vw;
     width:30px;
     transition: top 500ms ease;
     .untoggled{
