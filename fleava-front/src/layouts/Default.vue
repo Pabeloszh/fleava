@@ -1,10 +1,8 @@
 <template>
   <div>
-  <Navbar/>
-  <Menu/>
-    <div class="content">
-      <img src="https://fleava.com/assets/img/home/home.webp" alt="">
-    </div>
+    <Navbar/>
+    <Menu/>
+    <slot/>
   </div>
 </template>
 
@@ -27,13 +25,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .content{
-    height:100vh;
-    width:100%;
-    background-color:#000;
-    img{
-      width:100%;
-      height:100%;
-    }
-  }
 </style>
