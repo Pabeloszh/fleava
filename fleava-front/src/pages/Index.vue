@@ -2,16 +2,18 @@
   <Layout>
     <div class="content">
       <MainSlider/>
-      idk
+      <Expertise/>
     </div>
   </Layout>
 </template>
 
 <script>
 import MainSlider from "./Home/MainSlider/MainSlider"
+import Expertise from "./Home/Expertise/Expertise"
 export default {
   components:{
-    MainSlider
+    MainSlider,
+    Expertise
   },
   metaInfo: {
     title: 'Hello, world!'
