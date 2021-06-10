@@ -3,7 +3,8 @@
     background-color:#000;
     padding: 160px 0 120px;
     .desc{
-        padding: 0 10vw 0 calc(22.5vw + 28px);
+        max-width:calc(880px + 20vw);
+        padding: 0 10vw;
         color: #fff;
         font-family: 'Graphik', Arial, Helvetica, sans-serif;
         h3{
@@ -32,7 +33,7 @@
         }
     }
     .carousel-container{
-        padding: 100px 0 0 calc(22.5vw + 18px );
+        padding: 100px 0 0 10vw;
         .carousel{
             position:relative;
             overflow: hidden;

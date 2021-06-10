@@ -6,7 +6,7 @@
     color:#fff;
     font-family: 'Graphik', Arial, Helvetica, sans-serif;
     border-bottom:0.5px solid #ffffff80;
-    max-width: 860px;
+    max-width: 870px;
     margin:auto;
     h3, span{
         font-size: 11px;
@@ -50,6 +50,8 @@
 @media only screen and (max-width:992px){
     .story-container{
         flex-direction: column;
+        padding: 40px 0 10px;
+
         h3{
             display:none;
         }
