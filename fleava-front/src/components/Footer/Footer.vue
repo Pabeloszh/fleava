@@ -60,7 +60,6 @@ export default {
     },
     methods: {
         handleScroll (e) {
-            console.log(e)
             this.$refs.footerDesc.style.transform = `translateY(${-(this.$refs.footerDesc.getBoundingClientRect().y) * 0.35}px)`;
         }
     }
