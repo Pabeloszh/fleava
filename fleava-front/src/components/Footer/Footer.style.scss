@@ -1,0 +1,122 @@
+.footer-container{
+    overflow: hidden;
+    position:relative;
+    background: url('https://fleava.com/assets/img/general/footer.webp');
+    height: 100vh;
+    min-height: 650px;
+    max-height: 900px;
+    .overlay{
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 60%;
+        width:100%;
+        background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 100%);
+    }
+    .desc{
+        padding: 0 0 0 10vw;
+        position:absolute;
+        top:38%;
+        color:#fff;
+        font-family: 'Graphik', Arial, Helvetica, sans-serif;
+        >h2{
+            font: 200 normal 40px "Graphik";
+            color: #fff;
+            margin:0 0 60px;
+            display: none;
+        }
+        >h1{
+            width:675px;
+            font: 200 normal 80px/80px "Graphik";
+            margin:0 0 10vh;
+            color: #fff;
+        }
+        >h1::after{
+            content:'';
+            margin-top:5px;
+            background: #fff;
+            width:0;
+            height:5px;
+            display:block;
+            transition:width 500ms ease;
+        }
+        h1:hover::after{
+            width:100%;
+        }
+        .links{
+            display:flex;
+            h3{
+                font-size: 12px;
+                height: 32px;
+                font-weight: 200;
+                opacity: .9;
+                color: #fff;
+                font-size: inherit;
+            }
+            p{
+                font-size:12px;
+                line-height: 2;
+                opacity:.6;
+            }
+            sup{
+                font-size: 60%;
+                font-weight: 400;
+                opacity: .7;
+                position: relative;
+                top: -5px;
+            }
+            .location{
+                width:180px;
+                margin-right:50px;
+            }
+            .nav{
+                display:flex;
+                div{
+                    margin-right:50px;
+                }
+            }
+        }
+        .social{
+            div{
+                display:flex;
+                margin-bottom:15px;
+                span{
+                    opacity:.5;
+                    font-size:12px;
+                    margin-right:2px;
+                }
+                p{
+                    font-size:12px;
+                    opacity:.9;
+                    margin:0 12px 0 0;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:992px){
+    .footer-container{
+        min-height:800px;
+        .overlay{
+            // display:none
+            height: 20%;
+
+        }
+        .desc{
+            top:10vh;
+            >h2{
+                display:block
+            }
+            >h1{
+                display:none;
+            }
+            .links{
+                flex-direction: column;
+                .location, .nav{
+                    margin-bottom:50px;
+                }
+            }
+        }
+    }
+}

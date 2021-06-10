@@ -3,6 +3,7 @@
     <Navbar/>
     <Menu/>
     <slot/>
+    <Footer/>
   </div>
 </template>
 
@@ -16,10 +17,12 @@ query {
 <script>
 import Navbar from "@/components/Navbar/Navbar";
 import Menu from "@/components/Menu/Menu";
+import Footer from "@/components/Footer/Footer"
 export default {
   components: {
     Navbar,
-    Menu
+    Menu,
+    Footer
   }
 }
 </script>
