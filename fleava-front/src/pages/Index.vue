@@ -4,9 +4,7 @@
       <MainSlider/>
       <Expertise/>
       <Agency/>
-      <div :style="{backgroundColor: 'red', height: '1000px', width: '100%'}">
-        idk
-      </div>
+      <IndustryRec/>
     </div>
   </Layout>
 </template>
@@ -15,11 +13,13 @@
 import MainSlider from "./Home/MainSlider/MainSlider"
 import Expertise from "./Home/Expertise/Expertise"
 import Agency from "./Home/Agency/Agency"
+import IndustryRec from "./Home/IndustryRec/IndustryRec"
 export default {
   components:{
     MainSlider,
     Expertise,
-    Agency
+    Agency,
+    IndustryRec
   },
   metaInfo: {
     title: 'Hello, world!'
