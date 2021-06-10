@@ -3,6 +3,8 @@
     position:relative;
     cursor: pointer;
     background-color:#fff;
+    max-width: calc(870px + 20vw);
+    margin:auto;
     .desc{
         display: flex;
         justify-content: space-between;

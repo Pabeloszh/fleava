@@ -6,6 +6,7 @@
     min-height: 650px;
     max-height: 900px;
     .overlay{
+        pointer-events: none;
         z-index: 2;
         position: absolute;
         top: 0;
@@ -27,6 +28,7 @@
             display: none;
         }
         >h1{
+            cursor:pointer;
             width:675px;
             font: 200 normal 80px/80px "Graphik";
             margin:0 0 10vh;
@@ -99,7 +101,6 @@
     .footer-container{
         min-height:800px;
         .overlay{
-            // display:none
             height: 20%;
 
         }

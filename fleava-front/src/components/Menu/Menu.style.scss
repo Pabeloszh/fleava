@@ -1,3 +1,15 @@
+@keyframes resizeToggledMobile {
+    from {
+        transform: translateY(25px) translateX(-35px) rotate(90deg) scaleX(1);
+        visibility:visible;
+    }
+    to {
+        transform: translateY(25px) translateX(-35px) rotate(90deg) scaleX(0);
+        visibility:hidden;
+
+    }
+}
+
 @keyframes resizeToggled {
     from {
         transform: scaleX(1);
@@ -45,6 +57,7 @@
 }
 
 .menu-button{
+    cursor:pointer;
     position:fixed;
     box-sizing: unset;
     z-index: 12;
@@ -144,13 +157,16 @@
         hr:last-child{
             transform: translateY(-30px);
             height:50px;
+            opacity: 0;
+            transition-delay: 400ms;
+
 
         }
         p{
             position:absolute;
             transform-origin: center;
             transform: rotate(-90deg) translateX(-25px);
-            opacity:1;
+            opacity:0;
         }
     }
     .toggled{
@@ -214,6 +230,7 @@
         margin-right:120px;
         h1{
             font: 200 normal 52px "Graphik";
+            margin:20px 0;
             transform: translateY(30px);
             opacity:0;
         }
@@ -299,7 +316,44 @@
 
 @media only screen and (max-width:992px){
     .menu-button{
-        top:5vh;
+        top:5.5vh;
+        right:3vw;
+        width:20px;
+        transform: rotate(90deg);
+        .toggled{
+            hr{
+                transform-origin: 100% 50%;
+                transform: translateX(-30px) rotate(90deg) scale(1);
+                animation: resizeToggledMobile 400ms ease;
+
+            }
+        }
+    }
+    .menu-button:hover, .menu-active{
+        .toggled{
+            hr{
+                transform-origin: 100% 50%;
+                transform: translateY(25px) translateX(-35px) rotate(90deg);
+            }
+        }
+    }
+    .menu-active{
+        .untoggled{
+            transform: translateY(-150px);
+        }
+        .toggled{
+            hr{
+                animation: appearToggled 1500ms ease-in-out;
+            }
+        }
+    }
+    .menu-button:hover{
+        .untoggled{
+            hr:first-child{
+                transform-origin: 100% 0%;
+                transform: scaleY(0);
+            }
+        }
     }
     .overlay{
         flex-direction:column;
@@ -308,6 +362,7 @@
             margin:0 0 0 15%;
             h1{
                 font-size:40px;
+                margin: 15px 0;
             }
         }
         > div:last-child{
