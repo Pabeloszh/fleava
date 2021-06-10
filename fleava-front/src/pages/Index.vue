@@ -5,6 +5,7 @@
       <Expertise/>
       <Agency/>
       <IndustryRec/>
+      <AwardsVideo/>
     </div>
   </Layout>
 </template>
@@ -14,12 +15,14 @@ import MainSlider from "./Home/MainSlider/MainSlider"
 import Expertise from "./Home/Expertise/Expertise"
 import Agency from "./Home/Agency/Agency"
 import IndustryRec from "./Home/IndustryRec/IndustryRec"
+import AwardsVideo from "./Home/AwardsVideo/AwardsVideo"
 export default {
   components:{
     MainSlider,
     Expertise,
     Agency,
-    IndustryRec
+    IndustryRec,
+    AwardsVideo
   },
   metaInfo: {
     title: 'Hello, world!'
