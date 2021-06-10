@@ -3,7 +3,7 @@
     background-color:#000;
     padding: 160px 0 120px;
     .desc{
-        padding: 0 10vw 0 calc(22.5vw + 28px );
+        padding: 0 10vw 0 calc(22.5vw + 28px);
         color: #fff;
         font-family: 'Graphik', Arial, Helvetica, sans-serif;
         h3{
@@ -32,10 +32,11 @@
         }
     }
     .carousel-container{
-        padding: 0 calc(22.5vw + 18px );
-        overflow: hidden;
+        padding: 100px 0 0 calc(22.5vw + 18px );
         .carousel{
-            pointer-events: none;
+            position:relative;
+            overflow: hidden;
+            transform: translateX(0px);
             // transition: all 500ms ease;
             width:100%;
             display: block;
@@ -49,7 +50,9 @@
 }
 @media only screen and (max-width:992px){
     .expertise-container{
+        padding: 80px 0 60px;
         .desc{
+            padding: 0 10vw;
             div{
                 flex-direction: column;
                 align-items: flex-start;
@@ -60,6 +63,9 @@
                     font-weight: 300;
                 }
             }
+        }
+        .carousel-container{
+            padding: 50px 0 0 calc(10vw - 15px );
         }
     }
 }
