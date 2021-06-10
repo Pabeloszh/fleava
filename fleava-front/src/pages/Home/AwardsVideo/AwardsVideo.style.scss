@@ -1,0 +1,26 @@
+.aw-video-container{
+    background-color:#212028;
+    cursor:pointer;
+    div{
+        width: 83%;
+        height: 85vh;
+        max-height: 700px;
+        transform: translateY(-35%);
+        background-color:#000;
+        overflow: hidden;
+        video{
+            width:110%;
+            height:110%;
+        }
+    }
+}
+@media only screen and (max-width:992px){
+    .aw-video-container{
+        div{
+            height: 60vh;
+            width:100%;
+            transform: translateY(-15%);
+
+        }
+    }
+}
