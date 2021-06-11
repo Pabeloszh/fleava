@@ -1,23 +1,21 @@
 <template>
   <Layout>
-    <div class="content">
       <MainSlider/>
       <Expertise/>
       <Agency/>
       <IndustryRec/>
       <AwardsVideo/>
       <FeatStories/>
-    </div>
   </Layout>
 </template>
 
 <script>
-import MainSlider from "./Home/MainSlider/MainSlider"
-import Expertise from "./Home/Expertise/Expertise"
-import Agency from "./Home/Agency/Agency"
-import IndustryRec from "./Home/IndustryRec/IndustryRec"
-import AwardsVideo from "./Home/AwardsVideo/AwardsVideo"
-import FeatStories from "./Home/FeatStories/FeatStories"
+import MainSlider from "@/routes/Home/MainSlider/MainSlider"
+import Expertise from "@/routes/Home/Expertise/Expertise"
+import Agency from "@/routes/Home/Agency/Agency"
+import IndustryRec from "@/routes/Home/IndustryRec/IndustryRec"
+import AwardsVideo from "@/routes/Home/AwardsVideo/AwardsVideo"
+import FeatStories from "@/routes/Home/FeatStories/FeatStories"
 export default {
   components:{
     MainSlider,
@@ -32,6 +30,5 @@ export default {
   }
 }
 </script>
-
 <style>
 </style>
