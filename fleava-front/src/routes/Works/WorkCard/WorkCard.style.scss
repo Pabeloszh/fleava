@@ -1,0 +1,65 @@
+.wcard-container{
+    width:100%;
+    flex:50%;
+    padding: 0 5%;
+    .parallax{
+        height:80vh;
+        max-height: 500px;
+        width: 100%;
+        overflow:hidden;
+        img{
+            width: 120%;
+            height:120%;
+            object-fit: cover;
+        }
+    }
+    .info{
+        padding: 60px 0 0;
+        color: #fff;
+        font-family: 'Graphik', Arial, Helvetica, sans-serif;
+        .wcaption{
+            max-width: 320px;
+            display:flex;
+            align-items: center;
+            h3{
+                font-size: 11px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                font-weight: 400;
+                opacity:.7;
+                margin-right: 20px;
+            }
+            hr{
+                width:35%;
+                height:1px;
+                border:none;
+                background-color:#fff;
+                opacity:0.3;
+
+            }
+        }
+        h2{
+            margin:30px auto 30px 0;
+            max-width: 320px;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        .desc{
+            max-width: 320px;
+            display:flex;
+            flex-wrap: wrap;
+            p{
+                opacity: 0.6;
+                line-height: 1.8;
+                font-size: 14px;
+                margin-right:5px;
+            }
+        }
+    }
+}
+@media only screen and (max-width:992px){
+    .wcard-container{
+        flex:100%;
+    }
+}
