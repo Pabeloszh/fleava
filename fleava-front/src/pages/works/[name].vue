@@ -2,16 +2,19 @@
   <Layout>
         <WorkHeader :wHeaderData="wHeaderData"/>
         <WorkDesc/>
+        <WorkParallax/>
   </Layout>
 </template>
 
 <script>
 import WorkHeader from "@/routes/Works[name]/WorkHeader/WorkHeader"
 import WorkDesc from "@/routes/Works[name]/WorkDesc/WorkDesc"
+import WorkParallax from "@/routes/Works[name]/WorkParallax/WorkParallax"
 export default {
     components:{
         WorkHeader,
-        WorkDesc
+        WorkDesc,
+        WorkParallax
     },
     data(){
         return{
