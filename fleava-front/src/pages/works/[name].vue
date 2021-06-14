@@ -1,17 +1,17 @@
 <template>
   <Layout>
-      <WorkHeader :wHeaderData="wHeaderData"/>
-        <div class="work-container">
-            
-        </div>
+        <WorkHeader :wHeaderData="wHeaderData"/>
+        <WorkDesc/>
   </Layout>
 </template>
 
 <script>
 import WorkHeader from "@/routes/Works[name]/WorkHeader/WorkHeader"
+import WorkDesc from "@/routes/Works[name]/WorkDesc/WorkDesc"
 export default {
     components:{
-        WorkHeader
+        WorkHeader,
+        WorkDesc
     },
     data(){
         return{
