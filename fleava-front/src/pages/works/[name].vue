@@ -5,6 +5,7 @@
         <WorkParallax/>
         <WorkWebsite/>
         <WorkMobile/>
+        <WorkAwards/>
   </Layout>
 </template>
 
@@ -14,13 +15,15 @@ import WorkDesc from "@/routes/Works[name]/WorkDesc/WorkDesc"
 import WorkParallax from "@/routes/Works[name]/WorkParallax/WorkParallax"
 import WorkWebsite from "@/routes/Works[name]/WorkWebsite/WorkWebsite"
 import WorkMobile from "@/routes/Works[name]/WorkMobile/WorkMobile"
+import WorkAwards from "@/routes/Works[name]/WorkAwards/WorkAwards"
 export default {
     components:{
         WorkHeader,
         WorkDesc,
         WorkParallax,
         WorkWebsite,
-        WorkMobile
+        WorkMobile,
+        WorkAwards
     },
     data(){
         return{
