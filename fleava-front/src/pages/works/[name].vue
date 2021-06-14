@@ -3,6 +3,7 @@
         <WorkHeader :wHeaderData="wHeaderData"/>
         <WorkDesc/>
         <WorkParallax/>
+        <WorkWebsite/>
   </Layout>
 </template>
 
@@ -10,11 +11,13 @@
 import WorkHeader from "@/routes/Works[name]/WorkHeader/WorkHeader"
 import WorkDesc from "@/routes/Works[name]/WorkDesc/WorkDesc"
 import WorkParallax from "@/routes/Works[name]/WorkParallax/WorkParallax"
+import WorkWebsite from "@/routes/Works[name]/WorkWebsite/WorkWebsite"
 export default {
     components:{
         WorkHeader,
         WorkDesc,
-        WorkParallax
+        WorkParallax,
+        WorkWebsite
     },
     data(){
         return{
