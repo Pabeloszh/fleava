@@ -2,44 +2,43 @@
     // width: 400px;
 	// flex-basis:400px;
 	position: relative;
+	display: inline-block;
+	white-space: normal;
 	box-sizing: border-box;
 	margin-right: 0;
 	margin: 15px;
-	display: inline-block;
-	white-space: normal;
     img{
+        margin-bottom:75px;
         width:36vw;
         min-width:400px;
-        // width:100%;
         height:400px;
         object-fit: cover;
-        margin-bottom:75px;
     }
     .desc{
-        width:36vw;
-        min-width:400px;
         display:flex;
         align-items: flex-start;
+        width:36vw;
+        min-width:400px;
         font-family: 'Graphik', Arial, Helvetica, sans-serif;
         color:#fff;
         h3{
             font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
             font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         div{
             padding-left:75px;
             h2{
                 margin:0 0 30px 0;
                 font-size: 30px;
-                font-weight: 300;
                 line-height: 1.3;
+                font-weight: 300;
             }
             p{
+                max-width:290px;
                 font-size: 14px;
                 line-height: 1.8;
-                max-width:290px;
             }
         }
     }
@@ -47,10 +46,10 @@
 @media only screen and (max-width:992px){
     .card-container{
         img{
+            margin-bottom:40px;
             width:75vw;
             min-width: 250px;
             max-width: 350px;
-            margin-bottom:40px;
         }
         .desc{
             width:75vw;

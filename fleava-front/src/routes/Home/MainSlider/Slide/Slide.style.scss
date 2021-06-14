@@ -1,9 +1,9 @@
 .slide-container{
     position:relative;
+    opacity:1;
+    flex-shrink: 0;
     width: 100vw;
     height:100vh;
-    flex-shrink: 0;
-    opacity:1;
     // transform-origin: 0% 50%;
     // transition: opacity 2000ms ease 200ms, transform 2000ms ease-in;
     img{
@@ -13,22 +13,22 @@
         object-fit: cover;
     }
     .content{
-        height:calc(100vh - 35%);
         position:absolute;
         top:35%;
-        padding:0 18vw 0 10vw;
         display:flex;
         flex-direction: column;
-        color:#fff;
+        height:calc(100vh - 35%);
+        padding:0 18vw 0 10vw;
         font-family: 'Graphik', Arial, Helvetica, sans-serif;
+        color:#fff;
         >div{
             display:flex;
             h3{
                 margin:0;
                 font-size: 11px;
-                letter-spacing: 2px;
                 text-transform: uppercase;
                 font-weight: 400;
+                letter-spacing: 2px;
             }
         }
         >div:first-child{
@@ -38,17 +38,17 @@
             div{
                 margin-left:12.5vw;
                 h1{
-                    font: 100 normal 65px/82px "Graphik";
                     margin: 0;
                     height:82px;
+                    font: 100 normal 65px/82px "Graphik";
                 }
             }
         }
         >div:last-child{
             position:absolute;
+            bottom:5vw;
             display:flex;
             padding-left:calc(12.5vw + 24px);
-            bottom:5vw;
         }
     }
 }
@@ -63,24 +63,24 @@
             }
             >div:first-child{
                 h3{
-                    padding-top:0;
                     margin-bottom:60px;
+                    padding-top:0;
                 }
                 div{
                     margin-left:0;
                     h1{
-                        font: 100 normal 37.5px "Graphik";
                         margin: 0;
                         height:56px;
+                        font: 100 normal 37.5px "Graphik";
                     }
                 }
             }
             >div:last-child{
                 position:relative;
-                display:flex;
-                padding-left:0;
                 bottom:0;
+                display:flex;
                 margin-top:45px;
+                padding-left:0;
             }
         }
     }
@@ -96,22 +96,22 @@
             }
             >div:first-child{
                 h3{
-                    padding-top:5px;
                     margin-bottom:0;
+                    padding-top:5px;
                 }
                 div{
                     margin-left:12.5vw;
                     h1{
-                        font: 100 normal 32.5px "Graphik";
                         height:48px;
+                        font: 100 normal 32.5px "Graphik";
                     }
                 }
             }
             >div:last-child{
                 position:absolute;
-                padding-left:0;
                 bottom:5vh;
                 margin-top:0;
+                padding-left:0;
             }
         }
     }
@@ -122,16 +122,16 @@
             top:25%;
             >div:first-child{
                 h3{
-                    padding-top:0;
                     margin-bottom:40px;
+                    padding-top:0;
                 }
             }
             >div:last-child{
                 position:relative;
-                display:flex;
-                padding-left:0;
                 bottom:0;
+                display:flex;
                 margin-top:25px;
+                padding-left:0;
             }
         }
     }

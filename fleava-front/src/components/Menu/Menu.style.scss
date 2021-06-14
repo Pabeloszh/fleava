@@ -57,63 +57,62 @@
 }
 
 .menu-button{
-    cursor:pointer;
     position:fixed;
-    box-sizing: unset;
     z-index: 12;
-    padding:20px;
     top:calc(50vh - 20px);
     right:2vw;
-    width:30px;
     transition: top 500ms ease;
+    width:30px;
+    box-sizing: unset;
+    padding:20px;
+    cursor:pointer;
     .untoggled{
-        transition:all 1000ms ease;
-        transition-delay: 1000ms;
         position:relative;
         display:flex;
         align-items: center;
         justify-content: flex-end;
+        transition:all 1000ms ease;
+        transition-delay: 1000ms;
         hr{
-            width:1px;
-            border:0;
+            transition:all 200ms ease;
             margin:0 4px;   
+            border:0;
+            width:1px;
             height:30px;
             background-color:#fff;
-            transition:all 200ms ease;
         }
         hr:first-child{
             transition:all 200ms ease;
-
         }
         p{
-            display:block;
-            transition:all 200ms ease;
             position:absolute;
             right:-15px;
+            display:block;
+            opacity:0;
+            transform: rotate(-90deg) translateX(15px);
+            transform-origin: center;
+            transition:all 200ms ease;
             margin:0;
             padding:0;
-            color: #fff;
-            transform-origin: center;
-            transform: rotate(-90deg) translateX(15px);
-            opacity:0;
-            text-transform: uppercase;
             font-size: 10px;
-            letter-spacing: 2px;
             font-family: 'Graphik', Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
         }
     }
     .toggled{
         position:absolute;
         top:27.5px;
-        width:50px;
         transition:all 400ms ease;
+        width:50px;
         hr{
             visibility:hidden;
+            transform-origin: 0% 50%;
+            animation: resizeToggled 400ms ease;
             border:0;
             height:1px;
             background-color:#fff;
-            transform-origin: 0% 50%;
-            animation: resizeToggled 400ms ease;
         }
     }
 }
@@ -131,12 +130,11 @@
         hr:last-child{
             transform: translateY(-30px);
             height:50px;
-
         }
         p{
             position:absolute;
-            transform-origin: center;
             transform: rotate(-90deg) translateX(-25px);
+            transform-origin: center;
             opacity:1;
         }
     }
@@ -155,18 +153,18 @@
             transform: scaleY(0);
         }
         hr:last-child{
+            opacity: 0;
             transform: translateY(-30px);
             height:50px;
-            opacity: 0;
             transition-delay: 400ms;
 
 
         }
         p{
             position:absolute;
-            transform-origin: center;
-            transform: rotate(-90deg) translateX(-25px);
             opacity:0;
+            transform: rotate(-90deg) translateX(-25px);
+            transform-origin: center;
         }
     }
     .toggled{
@@ -196,43 +194,42 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color:#000;
-    visibility: hidden;
     opacity:0;
+    visibility: hidden;
     transition:opacity 1000ms ease, visibility 1000ms ease;
     transition-delay:1000ms;
+    background-color:#000;
     h1, h3, p, sup{
-        color:#fff;
         font-family: 'Graphik', Arial, Helvetica, sans-serif;
-
+        color:#fff;
     }
     h1, h3{
         opacity: .8;
     }
     h3{
+        margin-top:0;
         font-size: 16px;
         font-weight: 400;
-        margin-top:0;
     }
     p{
+        opacity:.6;
         font-size:12px;
         line-height: 2;
-        opacity:.6;
     }
     sup{
-        font-size: 30%;
-        font-weight: 400;
-        opacity: .5;
         position: relative;
         top: -5px;
+        opacity: .5;
+        font-size: 30%;
+        font-weight: 400;
     }
     .main{
         margin-right:120px;
         h1{
-            font: 200 normal 52px "Graphik";
-            margin:20px 0;
-            transform: translateY(30px);
             opacity:0;
+            transform: translateY(30px);
+            margin:20px 0;
+            font: 200 normal 52px "Graphik";
         }
         @for $i from 1 through 5{
             $value: 1000ms - (200ms * $i);
@@ -243,20 +240,20 @@
         }
     }
     > div:last-child{
-        width:220px;
-        transform: translateY(30px);
         opacity:0;
+        transform: translateY(30px);
         transition:transform 1000ms ease, opacity 1000ms ease;
+        width:220px;
         .location{
             p{
                 margin-bottom:40px;
             }
         }
         .sec{
-            height:100px;
             display:flex;
             justify-content: space-between;
             margin-bottom:40px;
+            height:100px;
             div{
                 display:flex;
                 flex-direction: column;
@@ -265,8 +262,8 @@
                     margin:0;
                 }
                 sup{
-                    font-size: 60%;
                     opacity:0.7;
+                    font-size: 60%;
                 }
             }
         }
@@ -283,21 +280,21 @@
 }
 
 .grayScale-active{
-    visibility: visible;
     opacity:1;
-    backdrop-filter: grayscale(1);
+    visibility: visible;
     animation: backdropGray ease 1000ms; 
+    backdrop-filter: grayscale(1);
 }
 
 .overlay-active{
-    visibility: visible;
     opacity:1;  
+    visibility: visible;
     transition:opacity 1000ms ease, visibility 1000ms ease;
     transition-delay: 600ms;
     .main{
         h1{
-            transform: translateY(0);
             opacity:1;
+            transform: translateY(0);
         }
         @for $i from 1 through 5{
             $value: 1000ms + (200ms * $i);
@@ -307,10 +304,10 @@
         }
     }
     > div:last-child{
-        width:220px;
-        transform: translateY(0);
         opacity:1;
+        transform: translateY(0);
         transition-delay: 1000ms;
+        width:220px;
     }
 }
 
@@ -318,22 +315,21 @@
     .menu-button{
         top:5.5vh;
         right:3vw;
-        width:20px;
         transform: rotate(90deg);
+        width:20px;
         .toggled{
             hr{
-                transform-origin: 100% 50%;
                 transform: translateX(-30px) rotate(90deg) scale(1);
+                transform-origin: 100% 50%;
                 animation: resizeToggledMobile 400ms ease;
-
             }
         }
     }
     .menu-button:hover, .menu-active{
         .toggled{
             hr{
-                transform-origin: 100% 50%;
                 transform: translateY(25px) translateX(-35px) rotate(90deg);
+                transform-origin: 100% 50%;
             }
         }
     }
@@ -350,8 +346,8 @@
     .menu-button:hover{
         .untoggled{
             hr:first-child{
-                transform-origin: 100% 0%;
                 transform: scaleY(0);
+                transform-origin: 100% 0%;
             }
         }
     }
@@ -361,8 +357,8 @@
         .main{
             margin:0 0 0 15%;
             h1{
-                font-size:40px;
                 margin: 15px 0;
+                font-size:40px;
             }
         }
         > div:last-child{
@@ -371,9 +367,9 @@
                 display:none;
             }
             .sec{
-                height:auto;
                 flex-direction: column;
                 margin-bottom:10px;
+                height:auto;
                 div{
                     h3{
                         margin:10px 0;
@@ -402,7 +398,6 @@
             margin-right:50px;
             h1{
                 margin: 15px 0; 
-
             }
         }
     }

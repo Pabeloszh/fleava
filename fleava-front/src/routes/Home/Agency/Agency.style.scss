@@ -1,11 +1,11 @@
 .agency-container{
+    position:relative;
     overflow: hidden;
     height:120vh;
-    position:relative;
     cursor: pointer;
     .parallax{
-        height:150%;
         width:100%;
+        height:150%;
         background: url('https://fleava.com/assets/img/home/about.webp');
         background-repeat: no-repeat;
         background-size: cover;
@@ -20,9 +20,9 @@
         h3{
             margin-bottom: 62.5px;
             font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
             font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         h1{
             font-size: 75px;
