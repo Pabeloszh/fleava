@@ -1,47 +1,47 @@
 .footer-container{
-    overflow: hidden;
     position:relative;
-    background: url('https://fleava.com/assets/img/general/footer.webp');
+    overflow: hidden;
     height: 100vh;
     min-height: 650px;
     max-height: 900px;
+    background: url('https://fleava.com/assets/img/general/footer.webp');
     .overlay{
-        pointer-events: none;
-        z-index: 2;
         position: absolute;
+        z-index: 2;
         top: 0;
         left: 0;
-        height: 60%;
         width:100%;
+        height: 60%;
         background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 100%);
+        pointer-events: none;
     }
     .desc{
-        padding: 0 0 0 10vw;
         position:absolute;
         top:38%;
-        color:#fff;
+        padding: 0 0 0 10vw;
         font-family: 'Graphik', Arial, Helvetica, sans-serif;
+        color:#fff;
         >h2{
+            display: none;
+            margin:0 0 60px;
             font: 200 normal 40px "Graphik";
             color: #fff;
-            margin:0 0 60px;
-            display: none;
         }
         >h1{
-            cursor:pointer;
-            width:675px;
-            font: 200 normal 80px/80px "Graphik";
             margin:0 0 10vh;
+            width:675px;
+            cursor:pointer;
+            font: 200 normal 80px/80px "Graphik";
             color: #fff;
         }
         >h1::after{
             content:'';
-            margin-top:5px;
-            background: #fff;
-            width:0;
-            height:5px;
             display:block;
             transition:width 500ms ease;
+            margin-top:5px;
+            width:0;
+            height:5px;
+            background: #fff;
         }
         h1:hover::after{
             width:100%;
@@ -49,28 +49,27 @@
         .links{
             display:flex;
             h3{
-                font-size: 12px;
+                opacity: .9;
                 height: 32px;
                 font-weight: 200;
-                opacity: .9;
-                color: #fff;
                 font-size: inherit;
+                color: #fff;
             }
             p{
+                opacity:.6;
                 font-size:12px;
                 line-height: 2;
-                opacity:.6;
             }
             sup{
-                font-size: 60%;
-                font-weight: 400;
-                opacity: .7;
                 position: relative;
                 top: -5px;
+                opacity: .7;
+                font-size: 60%;
+                font-weight: 400;
             }
             .location{
-                width:180px;
                 margin-right:50px;
+                width:180px;
             }
             .nav{
                 display:flex;
@@ -85,13 +84,13 @@
                 margin-bottom:15px;
                 span{
                     opacity:.5;
-                    font-size:12px;
                     margin-right:2px;
+                    font-size:12px;
                 }
                 p{
-                    font-size:12px;
                     opacity:.9;
                     margin:0 12px 0 0;
+                    font-size:12px;
                 }
             }
         }
@@ -102,7 +101,6 @@
         min-height:800px;
         .overlay{
             height: 20%;
-
         }
         .desc{
             top:10vh;
