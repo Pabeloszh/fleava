@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "works",
+  "info": {
+    "name": "works",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "mainImg": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "workZone": {
+      "type": "dynamiczone",
+      "components": [
+        "work.description",
+        "work.website",
+        "work.parallax",
+        "work.mobile"
+      ]
+    }
+  }
+}

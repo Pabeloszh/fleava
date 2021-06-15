@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_work_parallaxes",
+  "info": {
+    "name": "parallax",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
