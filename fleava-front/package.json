@@ -7,6 +7,8 @@
     "build": "gridsome build"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "graphql-request": "^3.4.0",
     "gridsome": "^0.7.0"
   },
   "devDependencies": {

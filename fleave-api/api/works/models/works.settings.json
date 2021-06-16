@@ -22,7 +22,7 @@
       "type": "string"
     },
     "mainImg": {
-      "collection": "file",
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images",
@@ -41,6 +41,18 @@
         "work.parallax",
         "work.mobile"
       ]
+    },
+    "cardImg": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }

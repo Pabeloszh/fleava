@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import WorkHeader from "@/routes/Works[name]/WorkHeader/WorkHeader"
 import WorkDesc from "@/routes/Works[name]/WorkDesc/WorkDesc"
 import WorkParallax from "@/routes/Works[name]/WorkParallax/WorkParallax"
@@ -33,9 +34,17 @@ export default {
                 name: "club raia",
                 title1: "Revolutionizing the",
                 title2: "Nightlife Experience.",
-            }
+            },
+            work: Object,
         }
     },
+    async mounted(){
+        const { name } = this.$route.params;
+        console.log(name.replace("-", '%20').toLowerCase())
+        await axios.get(`http://localhost:1337/works/?name=${name.replace("-", '%20').toLowerCase()}`)
+        .then(res => this.work = res.data[0])
+        // console.log(this.work)
+    }
 }
 </script>
 
