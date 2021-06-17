@@ -2,18 +2,20 @@
     <div class="mobile-container">
         <div class="desc">
             <h3>/ mobile</h3>
-            <p>The challenge comes when we're trying to combine Vintage Art Deco into the Modern Web. The result is surprisingly stunning. Strong lines, bold contrasts and luxurious textures.</p>
+            <p>{{data.desc}}</p>
         </div>
         <div class="imgs" ref="mbImg">
-            <img v-for="image in images" :key="image" src="https://fleava.com/assets/img/works/raia/m1.webp" alt="">
+            <img v-for="img in data.images" :key="img.url" :src="`http://localhost:1337${img.url}`" alt="">
         </div>
     </div>
 </template>
 <script>
 export default {
+    props:{
+        data:Object
+    },
     data(){
         return{
-            images: [1,2,3,4,5,6,7,8,9,10,11,12],
             num: 1,
         }
     },

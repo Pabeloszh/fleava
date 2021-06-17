@@ -24,6 +24,15 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "componentName": {
+      "type": "enumeration",
+      "enum": [
+        "description",
+        "parallax",
+        "website",
+        "mobile"
+      ]
     }
   }
 }

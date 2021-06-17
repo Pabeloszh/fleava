@@ -2,7 +2,8 @@
   "collectionName": "components_work_descriptions",
   "info": {
     "name": "description",
-    "icon": "align-justify"
+    "icon": "align-justify",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,6 +12,15 @@
     },
     "url": {
       "type": "string"
+    },
+    "componentName": {
+      "type": "enumeration",
+      "enum": [
+        "description",
+        "parallax",
+        "website",
+        "mobile"
+      ]
     }
   }
 }

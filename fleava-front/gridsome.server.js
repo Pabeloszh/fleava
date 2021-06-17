@@ -23,6 +23,8 @@ module.exports = function (api) {
           title: work.title,
           tags: work.tags,
           cardImg: work.cardImg.formats.medium.url,
+          mainImg: work.mainImg.formats.large.url,
+          workZone: work.workZone
       })
     }
   })

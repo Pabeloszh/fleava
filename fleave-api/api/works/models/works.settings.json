@@ -36,10 +36,10 @@
     "workZone": {
       "type": "dynamiczone",
       "components": [
-        "work.description",
         "work.website",
         "work.parallax",
-        "work.mobile"
+        "work.mobile",
+        "work.description"
       ]
     },
     "cardImg": {
