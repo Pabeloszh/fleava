@@ -1,9 +1,8 @@
 {
-  "collectionName": "components_work_parallaxes",
+  "collectionName": "components_work_awards",
   "info": {
-    "name": "parallax",
-    "icon": "image",
-    "description": ""
+    "name": "Awards",
+    "icon": "award"
   },
   "options": {},
   "attributes": {
@@ -18,6 +17,12 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
     }
   }
 }

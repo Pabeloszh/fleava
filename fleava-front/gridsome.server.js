@@ -24,7 +24,12 @@ module.exports = function (api) {
           tags: work.tags,
           cardImg: work.cardImg.formats.medium.url,
           mainImg: work.mainImg.formats.large.url,
-          workZone: work.workZone
+          hexColor: work.hexColor,
+          workDescription: work.workDescription,
+          workParallax: work.workParallax,
+          workWebsite: work.workWebsite,
+          workMobile: work.workMobile,
+          workAwards: work.workAwards
       })
     }
   })

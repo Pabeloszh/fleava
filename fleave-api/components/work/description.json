@@ -12,15 +12,6 @@
     },
     "url": {
       "type": "string"
-    },
-    "componentName": {
-      "type": "enumeration",
-      "enum": [
-        "description",
-        "parallax",
-        "website",
-        "mobile"
-      ]
     }
   }
 }

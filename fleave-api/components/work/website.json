@@ -8,7 +8,9 @@
   "options": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "default": "the website",
+      "required": true
     },
     "title": {
       "type": "string"
@@ -27,15 +29,6 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
-    },
-    "componentName": {
-      "type": "enumeration",
-      "enum": [
-        "description",
-        "parallax",
-        "website",
-        "mobile"
-      ]
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="website-container">
       <div class="desc">
-          <h3>/ the website</h3>
+          <h3>/ {{data.name}}</h3>
           <h2>{{data.title}}</h2>
           <p>{{data.desc}}</p>
       </div>

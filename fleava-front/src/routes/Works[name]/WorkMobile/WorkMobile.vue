@@ -1,7 +1,7 @@
 <template>
     <div class="mobile-container">
         <div class="desc">
-            <h3>/ mobile</h3>
+            <h3>/ {{data.name}}</h3>
             <p>{{data.desc}}</p>
         </div>
         <div class="imgs" ref="mbImg">

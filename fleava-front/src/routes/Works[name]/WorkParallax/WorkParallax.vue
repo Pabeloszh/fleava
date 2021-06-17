@@ -1,12 +1,12 @@
 <template>
     <div class="wparallax-container">
-        <img :src="`http://localhost:1337${data}`" alt="" ref="prlxImg">
+        <img :src="`http://localhost:1337${data.image.formats.large.url}`" alt="" ref="prlxImg">
     </div>
 </template>
 <script>
 export default {
     props:{
-        data:String
+        data:Object
     },
     created () {
         window.addEventListener('scroll', this.handleScroll);

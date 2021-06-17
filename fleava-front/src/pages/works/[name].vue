@@ -1,37 +1,63 @@
 <template>
   <Layout>
-        <WorkHeader :wHeaderData="wHeaderData"/>
-        <WorkDesc v-if="wComponents.desc" :data="this.work.workZone.filter(w=>w.componentName === 'description')[0]"/>
-        <WorkParallax v-if="wComponents.para" :data="this.work.workZone.filter(w=>w.componentName === 'parallax')[0].image.url"/>
-        <WorkWebsite v-if="wComponents.web" :data="this.work.workZone.filter(w=>w.componentName === 'website')[0]"/>
-        <WorkMobile v-if="wComponents.mob" :data="this.work.workZone.filter(w=>w.componentName === 'mobile')[0]"/>
-        <WorkAwards/>
+        <WorkHeader v-if="header" :data="header" />
+        <WorkDesc v-if="work.desc" :data="work.desc"/>
+        <WorkParallax v-if="work.parallax" :data="work.parallax"/>
+        <WorkWebsite v-for="web in work.website" :key="web.title" :data="web" :style="{backgroundColor: `#${work.hexColor}`}"/>
+        <WorkMobile v-if="work.mobile" :data="work.mobile" :style="{backgroundColor: `#${work.hexColor}`}"/>
+        <WorkAwards :data="work.awards" :style="{backgroundColor: `#${work.hexColor}`}"/>
   </Layout>
 </template>
 <page-query>
-    query{
-        works: allPostedWorks{
-            edges{
-                node{
-                    name,
-                    title,
-                    tags,
-                    mainImg
-                    workZone{
-                        componentName,
-                        title,
-                        desc,
-                        image{
-                            url
-                        }
-                        images{
-                            url
-                        }
-                    }
-                }
+query{
+  works: allPostedWorks{
+    edges{
+      node{
+        id,
+        name,
+        title,
+        tags,
+        mainImg,
+        hexColor,
+        desc: workDescription{
+          desc,
+          url
+        }
+        parallax: workParallax{
+          image{
+            formats{
+              large{
+                url
+              }
+            }
+          }
+        }
+        website: workWebsite{
+            name,
+            title,
+            desc,
+            images{
+                url
             }
         }
+        mobile: workMobile{
+            name,
+            desc,
+            images{
+                url
+            }
+        }
+        awards: workAwards{
+            image{
+                url
+            },
+            title,
+            desc
+        }
+      }
     }
+  }
+},
 </page-query>
 <script>
 import WorkHeader from "@/routes/Works[name]/WorkHeader/WorkHeader"
@@ -51,45 +77,21 @@ export default {
     },
     data(){
         return{
-            wHeaderData: {
-                mainImg: 'https://fleava.com/assets/img/works/raia/banner.webp',
-                dir: 'work',
-                name: "club raia",
-                title1: "Revolutionizing the",
-                title2: "Nightlife Experience.",
-            },
-            wComponents: {
-                desc: false,
-                para: false,
-                web: false,
-                mob: false,
-            },
+            name: this.$route.params.name.replace("-", ' '),
             work: {},
+            header: null,
         }
     },
     mounted(){
-        this.name = this.$route.params.name.replace("-", ' ');
-        this.work = this.$page.works.edges.filter((edge)=>(edge.node.name === this.name))[0].node
-
-        this.wComponents = {
-            desc: this.work.workZone.filter(w=>w.componentName === 'description').length > 0,
-            para: this.work.workZone.filter(w=>w.componentName === 'parallax').length > 0,
-            web: this.work.workZone.filter(w=>w.componentName === 'website').length > 0,
-            mob: this.work.workZone.filter(w=>w.componentName === 'mobile').length > 0
-        }
-        console.log(this.work.workZone.filter(w=>w.componentName === 'website')[0])
-
-        this.wHeaderData = {
-            mainImg: `http://localhost:1337${this.work.mainImg}`,
-            dir: 'work',
+        this.work = this.$page.works.edges.filter((edge)=>(edge.node.name === this.name))[0].node;
+        console.log(this.work)
+        this.header = {
             name: this.work.name,
-            title1: "Revolutionizing the",
-            title2: "Nightlife Experience.",
+            mainImg: this.work.mainImg,
+            title1: this.work.title,
         }
     }
 }
 </script>
-
-<style>
-
+<style >
 </style>

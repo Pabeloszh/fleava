@@ -5,11 +5,11 @@
             <p>Our amazing team creates brilliant experiences for our clients and their customers using strategy, research, design, technology, communications, data and creative thinking.</p>
         </div>
         <div class="awards">
-            <div class="award" v-for="i in 2" :key="i">
-                <img src="https://fleava.com/assets/img/general/cssda.webp" alt="">
+            <div class="award" v-for="award in data" :key="award.title">
+                <img :src="`http://localhost:1337${award.image.url}`" alt="">
                 <div class="text">  
-                    <strong>CSS Design Awards</strong>
-                    <p>Website of the Day Innvation, UI, UX</p>
+                    <strong>{{award.title}}</strong>
+                    <p>{{award.desc}}</p>
                 </div>
             </div>
         </div>
@@ -17,7 +17,9 @@
 </template>
 <script>
 export default {
-
+    props:{
+        data: Array,
+    }
 }
 </script>
 <style lang="scss" scoped src="./WorkAwards.style.scss">
