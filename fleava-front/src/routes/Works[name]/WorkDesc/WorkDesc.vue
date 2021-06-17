@@ -11,7 +11,7 @@
                 </div>
                 <div>
                     <h4>
-                        Relieve the joy of life with things that entertain you. From the music, drinks, to the cigars, our beautifully appointed speakeasy lounge is where life slows down so you can relax as meaningful tales are told and great stories are made.
+                        {{data.desc}}
                     </h4>
                 </div>
             </div>
@@ -21,7 +21,9 @@
 </template>
 <script>
 export default {
-
+    props:{
+        data: Object,
+    }
 }
 </script>
 <style lang="scss" scoped src="./WorkDesc.style.scss">

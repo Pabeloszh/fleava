@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "works",
+  "info": {
+    "name": "works",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "mainImg": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "cardImg": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "workDescription": {
+      "type": "component",
+      "repeatable": false,
+      "component": "work.description"
+    },
+    "workParallax": {
+      "type": "component",
+      "repeatable": false,
+      "component": "work.parallax"
+    },
+    "workWebsite": {
+      "type": "component",
+      "repeatable": true,
+      "component": "work.website"
+    },
+    "workMobile": {
+      "type": "component",
+      "repeatable": false,
+      "component": "work.mobile"
+    },
+    "hexColor": {
+      "type": "string"
+    },
+    "workAwards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "work.awards"
+    }
+  }
+}

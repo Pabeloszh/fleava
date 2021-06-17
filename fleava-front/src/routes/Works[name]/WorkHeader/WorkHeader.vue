@@ -1,14 +1,14 @@
 <template>
     <div class="wheader-container">
         <div class="parallax">
-            <img :src="wHeaderData.mainImg" alt="" ref="prlxImg">
+            <img :src="`http://localhost:1337${data.mainImg}`" alt="" ref="prlxImg">
         </div>
         <div class="wheader" ref="wHeader">
-            <div class="reveal-item" v-if="wHeaderData.name"><h3>/ <span>{{wHeaderData.dir}}</span> - {{wHeaderData.name}}</h3></div>
+            <div class="reveal-item" v-if="data.name"><h3>/ <span>works</span> - {{data.name}}</h3></div>
             <div class="title">
-                <div class="reveal-item"><h1>{{wHeaderData.title1}}</h1></div>
-                <div class="reveal-item" v-if="wHeaderData.title2"><h1>{{wHeaderData.title2}}</h1></div>
-                <div class="reveal-item" v-if="wHeaderData.title3"><h1>{{wHeaderData.title3}}</h1></div>
+                <div class="reveal-item"><h1>{{data.title1}}</h1></div>
+                <div class="reveal-item" v-if="data.title2"><h1>{{data.title2}}</h1></div>
+                <div class="reveal-item" v-if="data.title3"><h1>{{data.title3}}</h1></div>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@ export default {
         observer: null,
     }),
     props:{
-        wHeaderData: Object,
+        data: Object,
     },
     created () {
         window.addEventListener('scroll', this.handleScroll);

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_work_descriptions",
+  "info": {
+    "name": "description",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "desc": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

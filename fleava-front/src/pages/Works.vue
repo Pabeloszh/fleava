@@ -4,6 +4,7 @@
     <WCardsCont/>
   </Layout>
 </template>
+
 <script>
 import Header from "@/components/Header/Header"
 import WCardsCont from "@/routes/Works/WCardsCont/WCardsCont"
@@ -21,7 +22,7 @@ export default {
       }
 
     }
-  }
+  },
 }
 </script>
 

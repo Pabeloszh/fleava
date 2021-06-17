@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_work_awards",
+  "info": {
+    "name": "Awards",
+    "icon": "award"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    }
+  }
+}

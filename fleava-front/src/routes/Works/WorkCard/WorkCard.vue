@@ -1,14 +1,14 @@
 <template>
-  <div class="wcard-container" ref="wcrdCont">
+  <div class="wcard-container" ref="wcrdCont" @click="$router.push('/works/'+data.name.replace(/\s+/g, '-').toLowerCase())">
       <div class="parallax">
-          <img src="https://fleava.com/assets/img/works/thumbs/raia.webp" alt="" ref="prlxImg">
+          <img :src="`http://localhost:1337${data.cardImg}`" alt="" ref="prlxImg">
       </div>
       <div class="info">
           <div class="wcaption">
-              <h3>Club raia</h3>
+              <h3>{{data.name}}</h3>
               <hr>
           </div>
-          <h2>Revolutionizing the Nightlife Experience.</h2>
+          <h2>{{data.title}}</h2>
           <div class="desc">
               <p>Strategy.</p>
               <p>UX/UI Design.</p>
@@ -23,10 +23,11 @@
 <script>
 export default {
     props:{
-        num: Number,
+        link: String,
+        data: Object,
     },
     created () {
-        
+        console.log(this.data)
         window.innerWidth > 992 && window.addEventListener('scroll', this.handleScroll);
     },
     destroyed () {
@@ -34,8 +35,8 @@ export default {
     },
     methods: {
         handleScroll () {
-           this.num%2 === 0 && (this.$refs.wcrdCont.style.transform = `translateY(${-(this.$refs.wcrdCont.getBoundingClientRect().y) * 0.1}px)`);
-           this.num%2 !== 0 && (this.$refs.wcrdCont.style.transform = `translateY(${(this.$refs.wcrdCont.getBoundingClientRect().y) * 0.1}px)`);
+           this.data.id%2 === 0 && (this.$refs.wcrdCont.style.transform = `translateY(${-(this.$refs.wcrdCont.getBoundingClientRect().y) * 0.1}px)`);
+           this.data.id%2 !== 0 && (this.$refs.wcrdCont.style.transform = `translateY(${(this.$refs.wcrdCont.getBoundingClientRect().y) * 0.1}px)`);
            this.$refs.prlxImg.style.transform = `translateY(${-(this.$refs.prlxImg.getBoundingClientRect().y) * 0.35}px)`;
         }
     }

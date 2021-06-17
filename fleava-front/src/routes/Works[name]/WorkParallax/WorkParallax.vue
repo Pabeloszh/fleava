@@ -1,10 +1,13 @@
 <template>
     <div class="wparallax-container">
-        <img src="https://fleava.com/assets/img/works/raia/full1.webp" alt="" ref="prlxImg">
+        <img :src="`http://localhost:1337${data.image.formats.large.url}`" alt="" ref="prlxImg">
     </div>
 </template>
 <script>
 export default {
+    props:{
+        data:Object
+    },
     created () {
         window.addEventListener('scroll', this.handleScroll);
     },

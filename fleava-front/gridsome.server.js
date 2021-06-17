@@ -5,12 +5,32 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-module.exports = function (api) {
-  api.loadSource(({ addCollection }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
-  })
+const axios = require('axios')
+const GraphQLList = require('graphql')
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
+module.exports = function (api) {
+  api.loadSource(async actions => {
+    const response = await axios.get('http://localhost:1337/works')
+
+    const collection = actions.addCollection({
+      typeName: 'PostedWorks'
+    })
+
+    for (const work of response.data) {
+      collection.addNode({
+          id: work.id,
+          name:work.name,
+          title: work.title,
+          tags: work.tags,
+          cardImg: work.cardImg.formats.medium.url,
+          mainImg: work.mainImg.formats.large.url,
+          hexColor: work.hexColor,
+          workDescription: work.workDescription,
+          workParallax: work.workParallax,
+          workWebsite: work.workWebsite,
+          workMobile: work.workMobile,
+          workAwards: work.workAwards
+      })
+    }
   })
 }
