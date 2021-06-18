@@ -19,7 +19,7 @@
     }
     >div{
         display:flex;
-        h4{
+        h2{
             width:50%;
             max-width: 450px;
             padding-right: 40px;
@@ -56,11 +56,11 @@
         }
         >div{
             flex-direction: column;
-            h4, div{
+            h2, div{
                 width:100%;
                 max-width: none;
             }
-            h4{
+            h2{
                 padding:0;
             }
             div{

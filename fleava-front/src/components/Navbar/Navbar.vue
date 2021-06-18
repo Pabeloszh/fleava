@@ -1,11 +1,11 @@
 <template>
     <div class="navbar">
-        <a href="" class="logo">
+        <router-link to="/" class="logo">
             <img src="https://fleava.com/assets/img/general/fleava-logo.svg" alt="logo">
-        </a>
+        </router-link>
         <div>
-            <a href="">ABOUT</a>
-            <a href="">WORKS</a>
+            <router-link to="/">ABOUT</router-link>
+            <router-link to="/works">WORKS</router-link>
         </div>
     </div>
 </template>

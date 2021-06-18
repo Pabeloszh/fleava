@@ -1,8 +1,8 @@
 <template>
     <div class="aw-video-container" ref="awCont">
         <div>
-            <video ref="video" muted="muted" data-scroll="" playsinline="" data-scroll-speed="-3" autoplay="" loop="loop" data-poster="https://fleava.com/assets/img/awards/trophy.jpg" poster="https://fleava.com/assets/img/awards/trophy.webp" >
-                <source src="https://fleava.com/assets/img/awards/trophy.mp4" type="video/mp4">>
+            <video ref="video" muted="muted" data-scroll="" playsinline="" data-scroll-speed="-3" autoplay="" loop="loop" data-poster="@/images/trophy.jpg" poster="@/images/trophy.webp" >
+                <source src="@/images/trophy.mp4" type="video/mp4">>
             </video>
         </div>
     </div>
@@ -13,7 +13,6 @@ export default {
         observer: null,
     }),
     mounted() {
-        // console.log()
         this.observer = new IntersectionObserver((entries)=> {
             entries.forEach(entry => {
                 if(!entry.isIntersecting){

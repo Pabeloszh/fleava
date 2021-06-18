@@ -1,6 +1,7 @@
 <template>
   <div class="footer-container">
       <div class="overlay"></div>
+        <g-image src="~/images/footer.webp" alt="footer_img"/>
       <div class="desc" ref="footerDesc">
             <h1>hello@fleava.com</h1>
             <h2>Get in touch</h2>
