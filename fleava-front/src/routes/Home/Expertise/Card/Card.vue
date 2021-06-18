@@ -1,6 +1,6 @@
 <template>
     <div class="card-container">
-        <img src="https://fleava.com/assets/img/expertise/thumbs/strategy.webp" alt="">
+        <g-image src="https://fleava.com/assets/img/expertise/thumbs/strategy.webp" alt="card_img"/>
         <div class="desc">
             <h3>/ 01</h3>
             <div>

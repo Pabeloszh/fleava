@@ -1,6 +1,6 @@
 <template>
     <div class="slide-container">
-        <img src="https://fleava.com/assets/img/home/home.webp" alt="">
+        <g-image src="~/images/home.webp" alt="slide_img"/>
         <div class="content">
             <div>
                 <h3>/ 01</h3>

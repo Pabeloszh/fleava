@@ -14,6 +14,36 @@ export default function (Vue, { router, head, isClient }) {
     rel: 'stylesheet',
     href: 'https://cdn.rawgit.com/mfd/e7842774e037edf15919037594a79b2b/raw/665bdfc532094318449f1010323c84013d5af953/graphik.css'
   })
+  head.meta.push(
+    {
+      name:"og:locale",
+      content:"en_US"
+    },
+    {
+      name:"og:type",
+      content:"website"
+    },
+    {
+      name:"og:title",
+      content:"Fleava | Digital Agency"
+    },
+    {
+      name:"og:description",
+      content:"We are a Digital Agency based in Singapore, Bali and Jakarta, offering Website Design & Development, Mobile App Development, Corporate Branding"
+    },
+    {
+      name:"og:url",
+      content:"https://fleava.com"
+    },
+    {
+      name:"og:image",
+      content:"http://localhost:1337/uploads/fleava_b3d1e8b938.jpg"
+    },
+    {
+      name:"description",
+      content:"We are a Digital Agency based in Singapore, Bali and Jakarta, offering Website Design & Development, Mobile App Development, Corporate Branding"
+    }
+  )
   Vue.component('Layout', DefaultLayout)
   
 }

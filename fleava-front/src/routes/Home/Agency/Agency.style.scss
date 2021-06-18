@@ -4,11 +4,16 @@
     height:120vh;
     cursor: pointer;
     .parallax{
+        position:relative;
         width:100%;
-        height:150%;
-        background: url('https://fleava.com/assets/img/home/about.webp');
-        background-repeat: no-repeat;
-        background-size: cover;
+        height:150vh;
+        img{
+            position:absolute;
+            left:50%;
+            transform: translateX(-50%);
+            width:auto;
+            height:150vh;
+        }
     }
     .desc{
         position:absolute;

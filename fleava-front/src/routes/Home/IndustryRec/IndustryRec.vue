@@ -5,7 +5,7 @@
                 <h3>/ industry recognition</h3>
                 <h2>Nominated as Agency of the Year amongst best Digital Agencies Worldwide.</h2>
             </div>
-            <img src="https://fleava.com/assets/img/awards/badge.webp" alt="">
+            <g-image src="https://fleava.com/assets/img/awards/badge.webp" alt="award_badge"/>
         </div>
     </div>
 </template>
