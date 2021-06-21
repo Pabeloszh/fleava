@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/expertise-posts",
+      "handler": "expertise-posts.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/expertise-posts/count",
+      "handler": "expertise-posts.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/expertise-posts/:id",
+      "handler": "expertise-posts.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/expertise-posts",
+      "handler": "expertise-posts.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/expertise-posts/:id",
+      "handler": "expertise-posts.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/expertise-posts/:id",
+      "handler": "expertise-posts.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
