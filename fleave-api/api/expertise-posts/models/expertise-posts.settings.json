@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "expertise_posts",
+  "info": {
+    "name": "expertisePosts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "postTitle": {
+      "type": "text"
+    },
+    "postDesc": {
+      "type": "text"
+    },
+    "firstCardTitle": {
+      "type": "text"
+    },
+    "firstCardDesc": {
+      "type": "string"
+    },
+    "expertiseCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "expertise.cards"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
