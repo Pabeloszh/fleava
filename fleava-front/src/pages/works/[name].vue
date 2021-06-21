@@ -1,7 +1,7 @@
 <template>
   <Layout>
         <WorkHeader v-if="header" :data="header" />
-        <WorkDesc v-if="work.desc" :data="work.desc"/>
+        <WorkDesc v-if="work.desc" :data="work.desc" :tags="work.tags"/>
         <WorkParallax v-if="work.parallax" :data="work.parallax"/>
         <WorkWebsite v-for="web in work.website" :key="web.title" :data="web" :style="{backgroundColor: `#${work.hexColor}`}"/>
         <WorkMobile v-if="work.mobile" :data="work.mobile" :style="{backgroundColor: `#${work.hexColor}`}"/>
@@ -16,7 +16,9 @@ query{
         id,
         name,
         title,
-        tags,
+        tags{
+          tagName
+        },
         mainImg,
         hexColor,
         desc: workDescription{

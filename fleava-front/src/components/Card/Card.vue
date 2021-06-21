@@ -10,11 +10,7 @@
           </div>
           <h2>{{data.title}}</h2>
           <div class="desc">
-              <p>Strategy.</p>
-              <p>UX/UI Design.</p>
-              <p>Website.</p>
-              <p>Copywriting.</p>
-              <p>Media Production.</p>
+              <p v-for="tag in data.tags" :key="tag.name">{{tag.tagName}}.</p>
           </div>
       </div>
   </div>
@@ -29,6 +25,9 @@ export default {
     },
     created () {
         window.innerWidth > 992 && window.addEventListener('scroll', this.handleScroll);
+    },
+    mounted(){
+        console.log(this.data.workTags)
     },
     destroyed () {
         window.removeEventListener('scroll', this.handleScroll);

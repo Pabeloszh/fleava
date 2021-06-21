@@ -6,18 +6,21 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const axios = require('axios')
-const GraphQLList = require('graphql')
 
 module.exports = function (api) {
   api.loadSource(async actions => {
-    const response = await axios.get('http://localhost:1337/works')
+    const workResponse = await axios.get('http://localhost:1337/works')
+    const expertiseResponse = await axios.get('http://localhost:1337/expertise-posts')
 
-    const collection = actions.addCollection({
+    const workCollection = actions.addCollection({
       typeName: 'PostedWorks'
     })
+    const expertiseCollection = actions.addCollection({
+      typeName: "PostedExpertise"
+    })
 
-    for (const work of response.data) {
-      collection.addNode({
+    for (const work of workResponse.data) {
+      workCollection.addNode({
           id: work.id,
           name:work.name,
           title: work.title,
@@ -30,6 +33,22 @@ module.exports = function (api) {
           workWebsite: work.workWebsite,
           workMobile: work.workMobile,
           workAwards: work.workAwards
+      })
+    }
+    for(const exp of expertiseResponse.data){
+      expertiseCollection.addNode({
+        id:exp.id,
+        name:exp.name,
+        title: exp.title,
+        desc: exp.desc,
+        cardImg: exp.cardImg.formats.medium.url,
+        postTitle:exp.postTitle,
+        postDesc: exp.postDesc,
+        url: exp.url,
+        firstCardTitle: exp.firstCardTitle,
+        firstCardDesc: exp.firstCardDesc,
+        expertiseCards: exp.expertiseCards,
+
       })
     }
   })

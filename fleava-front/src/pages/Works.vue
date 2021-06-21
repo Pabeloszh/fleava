@@ -12,7 +12,9 @@
           id,
           name,
           title,
-          tags,
+          tags{
+            tagName
+          },
           cardImg
         }
       }

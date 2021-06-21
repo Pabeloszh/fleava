@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_tags",
+  "info": {
+    "name": "workTags"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tagName": {
+      "type": "string"
+    }
+  }
+}
