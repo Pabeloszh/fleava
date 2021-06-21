@@ -3,11 +3,7 @@
         <div class="content">
             <div>
                 <div>
-                    <p>Strategy</p>
-                    <p>UX/UI Design</p>
-                    <p>Website</p>
-                    <p>Copywriting</p>
-                    <p>Media Production</p>
+                    <p v-for="tag in tags" :key="tag.name">{{tag.tagName}}</p>
                 </div>
                 <div>
                     <h4>
@@ -23,6 +19,7 @@
 export default {
     props:{
         data: Object,
+        tags: Array,
     }
 }
 </script>
