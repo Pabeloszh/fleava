@@ -1,0 +1,40 @@
+.abrands-container{
+    position: relative;
+    overflow:hidden;
+    min-height: 140vh;
+    background-color:#000;
+    .overlay{
+        position: absolute;
+        top:0;
+        right:0;
+        bottom: 0;
+        left:0;
+        z-index: 2;
+        background:linear-gradient(to top, #000 0, rgba(0, 0, 0, 0) 30%), linear-gradient(to bottom, #000 0, rgba(0, 0, 0, 0) 30%);
+        
+    }
+    >div{
+        position:absolute;
+        top:50%;
+        right: 10vw;
+        left:10vw;
+        // transform:translateY(-50%);
+        font-family: 'Graphik', Arial, Helvetica, sans-serif;
+        color:#fff;
+        h3{
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        h1{
+            font-size: 62px;
+            line-height: 74px;
+            font-weight: 200;
+            margin:50px 0;
+        }
+        p{
+            font-size:16px;
+        }
+    }
+}
