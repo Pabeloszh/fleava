@@ -1,10 +1,10 @@
 <template>
-  <div class="wcard-container" ref="wcrdCont" @click="$router.push('/works/'+data.name.replace(/\s+/g, '-').toLowerCase())">
+  <div class="card-container" ref="crdCont" @click="$router.push(`/${route}/`+data.name.replace(/\s+/g, '-').toLowerCase())">
       <div class="parallax">
           <img :src="`http://localhost:1337${data.cardImg}`" alt="" ref="prlxImg">
       </div>
       <div class="info">
-          <div class="wcaption">
+          <div class="caption">
               <h3>{{data.name}}</h3>
               <hr>
           </div>
@@ -23,11 +23,11 @@
 <script>
 export default {
     props:{
+        route: String,
         link: String,
         data: Object,
     },
     created () {
-        console.log(this.data)
         window.innerWidth > 992 && window.addEventListener('scroll', this.handleScroll);
     },
     destroyed () {
@@ -35,13 +35,12 @@ export default {
     },
     methods: {
         handleScroll () {
-           this.data.id%2 === 0 && (this.$refs.wcrdCont.style.transform = `translateY(${-(this.$refs.wcrdCont.getBoundingClientRect().y) * 0.1}px)`);
-           this.data.id%2 !== 0 && (this.$refs.wcrdCont.style.transform = `translateY(${(this.$refs.wcrdCont.getBoundingClientRect().y) * 0.1}px)`);
+           this.data.id%2 === 0 && (this.$refs.crdCont.style.transform = `translateY(${-(this.$refs.crdCont.getBoundingClientRect().y) * 0.1}px)`);
+           this.data.id%2 !== 0 && (this.$refs.crdCont.style.transform = `translateY(${(this.$refs.crdCont.getBoundingClientRect().y) * 0.1}px)`);
            this.$refs.prlxImg.style.transform = `translateY(${-(this.$refs.prlxImg.getBoundingClientRect().y) * 0.35}px)`;
         }
     }
 }
 </script>
-<style lang="scss" scoped src="./WorkCard.style.scss">
-
+<style lang="scss" scoped src="./Card.style.scss">
 </style>

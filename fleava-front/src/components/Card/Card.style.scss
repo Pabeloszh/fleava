@@ -1,4 +1,4 @@
-.wcard-container{
+.card-container{
     flex:50%;
     width:100%;
     padding: 0 5%;
@@ -17,7 +17,7 @@
         padding: 60px 0 0;
         font-family: 'Graphik', Arial, Helvetica, sans-serif;
         color: #fff;
-        .wcaption{
+        .caption{
             display:flex;
             align-items: center;
             max-width: 320px;
@@ -59,7 +59,7 @@
     }
 }
 @media only screen and (max-width:992px){
-    .wcard-container{
+    .card-container{
         flex:100%;
     }
 }

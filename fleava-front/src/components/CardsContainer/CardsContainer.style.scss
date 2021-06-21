@@ -1,4 +1,4 @@
-.wcards-container{
+.cards-container{
     background-color: #000;
     >div{
         display:flex;
@@ -13,7 +13,7 @@
     }
 }
 @media only screen and (max-width:922px){
-    .wcards-container{
+    .cards-container{
         >div{
             .wcard-container, .wcard-container:nth-child(2n){
                 padding-top:75px;

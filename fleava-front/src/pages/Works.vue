@@ -1,17 +1,31 @@
 <template>
   <Layout>
     <Header :headerData="headerData"/>
-    <WCardsCont/>
+    <CardsContainer :data="$page.works.edges" :route="`works`"/>
   </Layout>
 </template>
-
+<page-query>
+  query {
+    works: allPostedWorks{
+      edges{
+        node{
+          id,
+          name,
+          title,
+          tags,
+          cardImg
+        }
+      }
+    }
+  }
+</page-query>
 <script>
 import Header from "@/components/Header/Header"
-import WCardsCont from "@/routes/Works/WCardsCont/WCardsCont"
+import CardsContainer from "@/components/CardsContainer/CardsContainer"
 export default {
   components: {
     Header,
-    WCardsCont
+    CardsContainer
   },
   data(){
     return{
