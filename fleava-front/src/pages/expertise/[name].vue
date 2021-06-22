@@ -43,7 +43,7 @@ export default {
     },
     data(){
         return{
-            name: this.$route.params.name.replace("-", ' '),
+            name: this.$route.params.name.replace(new RegExp("-", "g"), ' '),
             exp: {},
             header: null,
             desc: null
