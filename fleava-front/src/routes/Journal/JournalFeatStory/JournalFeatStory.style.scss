@@ -13,7 +13,7 @@
             left:50%;
             transform: translateX(-50%);
             object-fit: cover;
-            width:auto;
+            width:100vw;
             height:150vh;
         }
     }
@@ -39,7 +39,7 @@
     }
 }
 @media only screen and (max-width:992px){
-    .agency-container{
+    .jfstory-container{
         .desc{
             h3{
                 margin-bottom:26.25px;

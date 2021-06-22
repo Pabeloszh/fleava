@@ -2,15 +2,43 @@
     <Layout>
         <Header :headerData="headerData"/>
         <JournalFeatStory/>
+        <JournalCardsContainer :data="$page.journal.edges"/>
     </Layout>
 </template>
+<page-query>
+    query{
+        journal: allPostedJournal{
+            edges{
+                node{
+                    id,
+                    title,
+                    desc,
+                    blog,
+                    name,
+                    tag{
+                        tagName
+                    },
+                    mainImg{
+                        formats{
+                            large{
+                                url
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</page-query>
 <script>
 import Header from "@/components/Header/Header";
 import JournalFeatStory from "@/routes/Journal/JournalFeatStory/JournalFeatStory"
+import JournalCardsContainer from "@/routes/Journal/JournalCardsContainer/JournalCardsContainer"
 export default {
   components: {
     Header,
-    JournalFeatStory
+    JournalFeatStory,
+    JournalCardsContainer
   },
   data(){
     return{

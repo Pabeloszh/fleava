@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "journal_tags",
+  "info": {
+    "name": "journalTags"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tagName": {
+      "type": "string"
+    }
+  }
+}
