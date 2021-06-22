@@ -18,7 +18,7 @@
     "desc": {
       "type": "string"
     },
-    "mainImg": {
+    "image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [

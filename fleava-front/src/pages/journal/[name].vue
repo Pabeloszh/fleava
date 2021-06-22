@@ -1,6 +1,7 @@
 <template>
   <Layout>
-      idsk
+        <WorkHeader v-if="header" :data="header" />
+        <WorkParallax v-if="journal.image" :data="journal"/>
   </Layout>
 </template>
 <page-query>
@@ -16,7 +17,7 @@
                     tag{
                         tagName
                     },
-                    mainImg{
+                    image{
                         formats{
                             large{
                                 url
@@ -29,7 +30,13 @@
     }
 </page-query>
 <script>
+import WorkHeader from "@/routes/Works[name]/WorkHeader/WorkHeader"
+import WorkParallax from "@/routes/Works[name]/WorkParallax/WorkParallax"
 export default {
+    components:{
+        WorkHeader,
+        WorkParallax
+    },
     data(){
         return{
             name: this.$route.params.name.replace(new RegExp("-", "g"), ' '),
@@ -41,14 +48,11 @@ export default {
         this.journal = this.$page.journals.edges.filter((edge)=>(edge.node.name === this.name))[0].node;
         console.log(this.journal)
         this.header = {
-            name: this.journal.name,
-            mainImg: this.journal.mainImg,
+            name: this.journal.tag.tagName,
             title1: this.journal.title,
         }
     }
 }
 </script>
-
 <style>
-
 </style>

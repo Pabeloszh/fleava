@@ -50,7 +50,7 @@ module.exports = function (api) {
     for (const journal of journalResponse.data) {
       journalCollection.addNode({
           id: journal.id,
-          mainImg: journal.mainImg,
+          image: journal.image,
           title: journal.title,
           desc: journal.desc,
           tag: journal.tag,
