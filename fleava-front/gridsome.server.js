@@ -1,22 +1,19 @@
-// Server API makes it possible to hook into various parts of Gridsome
-// on server-side and add custom data to the GraphQL data layer.
-// Learn more: https://gridsome.org/docs/server-api/
-
-// Changes here require a server restart.
-// To restart press CTRL + C in terminal and run `gridsome develop`
-
 const axios = require('axios')
 
 module.exports = function (api) {
   api.loadSource(async actions => {
     const workResponse = await axios.get('http://localhost:1337/works')
     const expertiseResponse = await axios.get('http://localhost:1337/expertise-posts')
+    const journalResponse = await axios.get('http://localhost:1337/journals')
 
     const workCollection = actions.addCollection({
       typeName: 'PostedWorks'
     })
     const expertiseCollection = actions.addCollection({
       typeName: "PostedExpertise"
+    })
+    const journalCollection = actions.addCollection({
+      typeName: "PostedJournal"
     })
 
     for (const work of workResponse.data) {
@@ -48,7 +45,17 @@ module.exports = function (api) {
         firstCardTitle: exp.firstCardTitle,
         firstCardDesc: exp.firstCardDesc,
         expertiseCards: exp.expertiseCards,
-
+      })
+    }
+    for (const journal of journalResponse.data) {
+      journalCollection.addNode({
+          id: journal.id,
+          mainImg: journal.mainImg,
+          title: journal.title,
+          desc: journal.desc,
+          tag: journal.tag,
+          blog: journal.blog,
+          name: journal.name
       })
     }
   })

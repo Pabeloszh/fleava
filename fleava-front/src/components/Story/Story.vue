@@ -1,11 +1,11 @@
 <template>
-  <div class="story-container">
+  <div class="story-container" @click="$router.push(`/journal/${data.name.replace(/\s+/g, '-').toLowerCase()}`)">
       <h3>/ 1</h3>
       <div>
-        <h2>Commarts: Behind our Digital Transformation campaign</h2>
+        <h2>{{data.title}}</h2>
         <div>
-            <p>We've been interviewed with Communication Arts — the largest international trade journal of visual communications — about our campaign: Transform with Fleava.</p>
-            <span>/ news & stories</span>
+            <p>{{data.desc}}</p>
+            <span>{{data.tagName}}</span>
         </div>
       </div>
       <h1>+</h1>
@@ -14,7 +14,9 @@
 
 <script>
 export default {
-
+  props:{
+    data: Object
+  }
 }
 </script>
 
