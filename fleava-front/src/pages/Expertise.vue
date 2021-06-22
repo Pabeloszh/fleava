@@ -13,6 +13,9 @@
                     name,
                     title,
                     cardImg
+                    expertiseCards{
+                        name
+                    }
                 }
             }
         }

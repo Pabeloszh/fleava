@@ -9,8 +9,11 @@
               <hr>
           </div>
           <h2>{{data.title}}</h2>
-          <div class="desc">
+          <div class="desc" v-if="data.tags">
               <p v-for="tag in data.tags" :key="tag.name">{{tag.tagName}}.</p>
+          </div>
+          <div class="desc" v-else>
+              <p v-for="tag in this.data.expertiseCards" :key="tag.name">{{tag.name}},</p>
           </div>
       </div>
   </div>
@@ -27,7 +30,7 @@ export default {
         window.innerWidth > 992 && window.addEventListener('scroll', this.handleScroll);
     },
     mounted(){
-        console.log(this.data.workTags)
+        !this.data.tags && console.log(this.data.expertiseCards)
     },
     destroyed () {
         window.removeEventListener('scroll', this.handleScroll);
