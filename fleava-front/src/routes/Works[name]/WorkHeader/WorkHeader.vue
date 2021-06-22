@@ -1,10 +1,16 @@
 <template>
     <div class="wheader-container">
-        <div class="parallax">
+        <div class="parallax" v-if="data.mainImg">
             <img :src="`http://localhost:1337${data.mainImg}`" alt="" ref="prlxImg">
         </div>
         <div class="wheader" ref="wHeader">
-            <div class="reveal-item" v-if="data.name"><h3>/ <span>works</span> - {{data.name}}</h3></div>
+            <div class="reveal-item" v-if="data.name">
+                <h3>/ 
+                <span v-if="this.$route.path.includes('works')">works</span>
+                <span v-else>expertise</span>
+                 - {{data.name}}
+                </h3>
+            </div>
             <div class="title">
                 <div class="reveal-item"><h1>{{data.title1}}</h1></div>
                 <div class="reveal-item" v-if="data.title2"><h1>{{data.title2}}</h1></div>
