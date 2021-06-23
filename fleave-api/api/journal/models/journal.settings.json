@@ -30,14 +30,14 @@
       "required": false,
       "pluginOptions": {}
     },
-    "blog": {
-      "type": "richtext"
-    },
     "tag": {
       "model": "journal-tags"
     },
     "name": {
       "type": "string"
+    },
+    "blog": {
+      "type": "richtext"
     }
   }
 }
