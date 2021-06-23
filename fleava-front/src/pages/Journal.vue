@@ -13,12 +13,11 @@
                     id,
                     title,
                     desc,
-                    blog,
                     name,
                     tag{
                         tagName
                     },
-                    mainImg{
+                    image{
                         formats{
                             large{
                                 url

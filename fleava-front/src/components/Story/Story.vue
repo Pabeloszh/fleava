@@ -1,6 +1,6 @@
 <template>
   <div class="story-container" @click="$router.push(`/journal/${data.name.replace(/\s+/g, '-').toLowerCase()}`)">
-      <h3>/ 1</h3>
+      <h3>/ {{data.id}}</h3>
       <div>
         <h2>{{data.title}}</h2>
         <div>
