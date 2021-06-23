@@ -8,9 +8,12 @@
 export default {
     props:{
         data:String
+    },
+    mounted(){
+        console.log(this.data)
     }
     
 }
 </script>
-<style lang="scss" scoped src="./JournalBlog.style.scss">
+<style lang="scss" src="./JournalBlog.style.scss">
 </style>
