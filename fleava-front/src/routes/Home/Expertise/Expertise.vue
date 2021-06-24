@@ -8,21 +8,30 @@
             </div>
         </div>
         <div class="carousel-container" @touchstart="touchStart" @touchmove="touchMove" @touchend="()=>touched=false" @touchcancel="()=>touched=false" @mousedown="carouselOnDragg" @mouseup="()=>pressed = false" @mousemove="carouselOnSlide">
-            <div class="carousel" @mousemove="dragCircle" @mouseleave="() => circle.active = false">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+            <div class="carousel" v-if="expertise" @mousemove="dragCircle" @mouseleave="() => circle.active = false"> 
+                <Card v-for="exper in expertise" :key="exper.node.id" :data="exper.node"/>
                 <CursorCircle :circle="circle"/>
             </div>
         </div>
     </div>
 </template>
+<static-query>
+    query{
+        exp: allPostedExpertise{
+            edges{
+                node{
+                    id,
+                    name,
+                    title,
+                    cardImg
+                    expertiseCards{
+                        name
+                    }
+                }
+            }
+        }
+    }
+</static-query>
 <script>
 import Card from "./Card/Card"
 import CursorCircle from "@/components/CursorCircle/CursorCircle"
@@ -33,6 +42,7 @@ export default {
     },
     data(){
         return{
+            expertise: null,
             pressed: false,
             touched: false,
             prevTouchX: 0,
@@ -48,6 +58,9 @@ export default {
             },
 
         }
+    },
+    mounted(){
+        this.expertise = this.$static.exp.edges
     },
     methods:{
         carouselOnDragg(e) {
