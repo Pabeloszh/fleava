@@ -1,0 +1,84 @@
+.aheader-container{
+    position: relative;
+    padding:15vw 0 360px;
+    background-color:#000;
+    .parallax{
+        position: absolute;
+        z-index: 0;
+        top:0;
+        right:10vw;
+        bottom:0;
+        video{
+            height:100%;
+            width:100%;
+        }
+    }
+    .header{
+        position:relative;
+        z-index: 1;
+        margin:0 auto;
+        max-width: 800px;
+        font-family: 'Graphik', Arial, Helvetica, sans-serif;
+        color:#fff;
+        .title{
+            margin: 60px 0 40px;
+        }
+        .reveal-item{
+            overflow: hidden;
+            h1,h3{
+                transform:translateY(100px);
+                transition:transform 2000ms ease;
+            }
+            h3{
+                font-size: 11px;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+            h1{
+                font-size: 62px;
+                line-height: 74px;
+                font-weight: 200;
+            }
+            .badges{
+                z-index: 2;
+                display:flex;
+                img{
+                    margin-right: 50px;;
+                    width:200px;
+                }
+            }
+        }
+        
+    }
+    .header-active{
+        @for $i from 1 through 3{
+            $value: (200ms * $i);
+            .reveal-item:nth-child(#{$i}){
+                h1,h3{
+                    transform:translateY(0px);
+                    transition:transform 1000ms ease;
+                    transition-delay: $value;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 992px){
+    .aheader-container{
+        padding: 15vw 0 280px;
+        .header{
+            margin:20% 0 0 10%;
+            .reveal-item{
+                h1{
+                    font-size: 32px;
+                    line-height: 1.4;
+                    font-weight: 300;
+                }
+                .badges{
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

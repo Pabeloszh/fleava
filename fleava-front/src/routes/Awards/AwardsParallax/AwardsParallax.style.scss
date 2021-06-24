@@ -1,0 +1,22 @@
+.aparallax-container{
+    padding-top: 160px;
+    background-color:#000;
+    .parallax{
+        width: 83%;
+        height: 85vh;
+        max-height: 700px;
+        overflow: hidden;
+        img{
+            width:110%;
+            height:110%;
+            object-fit: cover;
+        }
+    }
+}
+@media only screen and (max-width:992px){
+    .aparallax-container{
+        .parallax{
+            width:100%;
+        }
+    }
+}

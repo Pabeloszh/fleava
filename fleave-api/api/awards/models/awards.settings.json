@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "awards",
+  "info": {
+    "name": "awards",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "month": {
+      "type": "string"
+    },
+    "awards_descs": {
+      "collection": "awards-desc",
+      "via": "award"
+    }
+  }
+}

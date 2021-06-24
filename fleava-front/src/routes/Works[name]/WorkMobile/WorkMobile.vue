@@ -1,8 +1,8 @@
 <template>
     <div class="mobile-container">
         <div class="desc">
-            <h3>/ {{data.name}}</h3>
-            <p>{{data.desc}}</p>
+            <h3 v-if="data.name">/ {{data.name}}</h3>
+            <p v-if="data.desc">{{data.desc}}</p>
         </div>
         <div class="imgs" ref="mbImg">
             <img v-for="img in data.images" :key="img.url" :src="`http://localhost:1337${img.url}`" alt="">
