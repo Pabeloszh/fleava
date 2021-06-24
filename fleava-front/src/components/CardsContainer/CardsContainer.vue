@@ -15,9 +15,6 @@ export default {
         data: Array,
         route: String,
     },
-    mounted(){
-        console.log(this.data)
-    }
 }
 </script>
 <style lang="scss" scoped src="./CardsContainer.style.scss">

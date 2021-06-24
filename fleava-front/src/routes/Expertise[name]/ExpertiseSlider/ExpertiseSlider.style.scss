@@ -1,0 +1,34 @@
+.exslider-container{
+    padding: 160px 0;
+    background-color:#000;
+    .cards{
+        display:flex;
+        align-items: center;
+        overflow: hidden;
+        .first-card{
+            padding: 0 0 0 10vw;
+            display:flex;
+            flex-direction: column;
+            align-items: flex-end;
+            min-width: 80vw;
+            font-family: 'Graphik', Arial, Helvetica, sans-serif;
+            color:#fff;
+            h2{
+                margin-bottom:50px;
+                width:100%;
+                max-width: 700px;
+                font-size: 52px;
+                line-height: 64px;
+                font-weight: 200;
+            }
+            p{
+                opacity: .6;
+                max-width: 400px;
+                margin-right:5vw;
+                font-size: 1.25rem;
+                line-height: 1.8;
+                font-weight: 300;
+            }
+        }
+    }
+}
