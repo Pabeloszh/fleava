@@ -29,9 +29,6 @@ export default {
     created () {
         window.innerWidth > 992 && window.addEventListener('scroll', this.handleScroll);
     },
-    mounted(){
-        !this.data.tags && console.log(this.data.expertiseCards)
-    },
     destroyed () {
         window.removeEventListener('scroll', this.handleScroll);
     },

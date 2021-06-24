@@ -21,9 +21,6 @@ export default {
     props:{
         data: Object,
     },
-    mounted(){
-        console.log(this.data)
-    }
 }
 </script>
 <style lang="scss" scoped src="./ExpertiseDesc.style.scss">
