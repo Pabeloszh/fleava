@@ -6,6 +6,7 @@ module.exports = function (api) {
     const expertiseResponse = await axios.get('http://localhost:1337/expertise-posts')
     const journalResponse = await axios.get('http://localhost:1337/journals')
     const awardsResponse = await axios.get('http://localhost:1337/awards')
+    const trustedsResponse = await axios.get('http://localhost:1337/trusteds')
 
     const workCollection = actions.addCollection({
       typeName: 'PostedWorks'
@@ -18,6 +19,9 @@ module.exports = function (api) {
     })
     const awardsCollection = actions.addCollection({
       typeName: "PostedAwards"
+    })
+    const trustedsCollection = actions.addCollection({
+      typeName: "PostedTrusteds"
     })
 
     for (const work of workResponse.data) {
@@ -67,6 +71,12 @@ module.exports = function (api) {
           id: award.id,
           month: award.month,
           awards_descs: award.awards_descs,
+      })
+    }
+    for (const trusted of trustedsResponse.data) {
+      trustedsCollection.addNode({
+          id: trusted.id,
+          logo: trusted.logo,
       })
     }
   })
