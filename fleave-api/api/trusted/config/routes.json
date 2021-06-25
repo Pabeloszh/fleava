@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/trusteds",
+      "handler": "trusted.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/trusteds/count",
+      "handler": "trusted.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/trusteds/:id",
+      "handler": "trusted.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/trusteds",
+      "handler": "trusted.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/trusteds/:id",
+      "handler": "trusted.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/trusteds/:id",
+      "handler": "trusted.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
