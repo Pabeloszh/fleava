@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/careers-skills",
+      "handler": "careers-skills.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/careers-skills/count",
+      "handler": "careers-skills.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/careers-skills/:id",
+      "handler": "careers-skills.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/careers-skills",
+      "handler": "careers-skills.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/careers-skills/:id",
+      "handler": "careers-skills.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/careers-skills/:id",
+      "handler": "careers-skills.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

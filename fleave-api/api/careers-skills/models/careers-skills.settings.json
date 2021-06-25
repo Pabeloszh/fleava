@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "careers_skills",
+  "info": {
+    "name": "careersSkills"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ability": {
+      "type": "string"
+    }
+  }
+}
