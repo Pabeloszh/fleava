@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brands_descs",
+  "info": {
+    "name": "brandsDesc"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "brands_list": {
+      "via": "brands_descs",
+      "model": "brandslist"
+    }
+  }
+}

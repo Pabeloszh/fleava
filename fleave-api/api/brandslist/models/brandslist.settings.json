@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brandslists",
+  "info": {
+    "name": "brandsList",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "year": {
+      "type": "integer"
+    },
+    "brands_descs": {
+      "collection": "brands-desc",
+      "via": "brands_list"
+    },
+    "brands": {
+      "via": "brands_lists",
+      "collection": "brands"
+    }
+  }
+}

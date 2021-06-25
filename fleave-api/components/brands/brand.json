@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_brands_brands",
+  "info": {
+    "name": "brand",
+    "icon": "briefcase",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "brands_descs": {
+      "collection": "brands-desc"
+    },
+    "year": {
+      "type": "integer"
+    }
+  }
+}
