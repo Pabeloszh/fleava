@@ -7,6 +7,7 @@ module.exports = function (api) {
     const journalResponse = await axios.get('http://localhost:1337/journals')
     const awardsResponse = await axios.get('http://localhost:1337/awards')
     const brandsResponse = await axios.get('http://localhost:1337/brands')
+    const careersResponse = await axios.get('http://localhost:1337/careers')
 
     const workCollection = actions.addCollection({
       typeName: 'PostedWorks'
@@ -22,6 +23,9 @@ module.exports = function (api) {
     })
     const brandsCollection = actions.addCollection({
       typeName: "PostedBrands"
+    })
+    const careersCollection = actions.addCollection({
+      typeName: "PostedCareers"
     })
 
     for (const work of workResponse.data) {
@@ -79,6 +83,14 @@ module.exports = function (api) {
           trusted: brand.trusted,
           partnership: brand.partnership,
           brands_lists: brand.brands_lists
+      })
+    }
+    for (const career of careersResponse.data) {
+      careersCollection.addNode({
+          id: career.id,
+          position: career.position,
+          desc: career.desc,
+          careers_skills: career.careers_skills
       })
     }
   })
