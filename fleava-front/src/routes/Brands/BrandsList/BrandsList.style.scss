@@ -1,0 +1,65 @@
+.blist-container{
+    padding: 100px 10vw;
+    background-color:#000;
+    .list{
+        margin: 0 auto;
+        max-width: 900px;
+        color:#fff;
+        columns:4;
+        .list-block{
+            font-family: 'Graphik', Arial, Helvetica, sans-serif;
+            margin-bottom:50px;
+            div{
+                display:flex;
+                flex-direction: column;
+                border-bottom: 1px solid #ffffff4d;
+                padding: 40px 0 40px;
+                margin: 0 15px;
+                span{
+                    margin-bottom:15px;
+                    font-size:11px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                }
+                a, a:visited, a:active{
+                    width:max-content;
+                    opacity:0.5;
+                    margin: 10px 0;
+                    font-size:15px;
+                    text-decoration: none;
+                    color:#fff;
+                }
+                a:not(.no-link){
+                    transition: opacity 200ms ease-in-out;
+                }
+                a:not(.no-link):hover{
+                    opacity:1;
+                }
+                .no-link{
+                    opacity:0.3;
+                    pointer-events: none;
+                }
+            }
+            div:first-child{
+                padding-top:0;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 992px){
+    .blist-container{
+        .list{
+            max-width: 400px;
+            columns:2;    
+        }
+    }
+}
+@media only screen and (max-width: 576px){
+    .blist-container{
+        .list{
+            max-width: none;
+            columns:1;    
+        }
+    }
+}

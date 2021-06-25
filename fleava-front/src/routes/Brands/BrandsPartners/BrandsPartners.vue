@@ -1,6 +1,6 @@
 <template>
-    <div class="trusted-container">
-        <h3>/ trusted by</h3>
+    <div class="partners-container">
+        <h3>/ IN PARTNERSHIP WITH</h3>
         <div class="logos" v-if="data">
             <img :src="`http://localhost:1337${trusted.formats.thumbnail.url}`" alt="" v-for="trusted in data" :key="trusted.id">
         </div>
@@ -13,5 +13,5 @@ export default {
     },
 }
 </script>
-<style lang="scss" scoped src="./BrandsTrusted.style.scss">
+<style lang="scss" scoped src="./BrandsPartners.style.scss">
 </style>

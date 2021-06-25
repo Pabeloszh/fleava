@@ -1,4 +1,4 @@
-.trusted-container{
+.partners-container{
     background-color:#000;
     padding: 160px 10vw 0;
     h3{
@@ -21,13 +21,18 @@
         border-bottom: 1px solid #ffffff4d;
         img{
             opacity:.6;
+            transition:opacity 200ms ease-in-out;
             margin: 10px;
             width:calc(20% - 20px);
+            cursor:pointer;
+        }
+        img:hover{
+            opacity:1;
         }
     }
 }
 @media only screen and (max-width:992px){
-    .trusted-container{
+    .partners-container{
         padding: 80px 10vw 0;
         .logos{
             max-width: 900px;
