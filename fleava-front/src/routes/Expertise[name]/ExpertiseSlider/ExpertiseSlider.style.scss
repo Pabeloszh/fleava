@@ -1,10 +1,35 @@
 .exslider-container{
     padding: 160px 0;
     background-color:#000;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    .space-holder {
+        position: relative;
+        width: 100%;
+      }
+      
+      .sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      
+      .horizontal {
+        position: absolute;
+        height: 100%;
+        will-change: transform;
+      }
+      
     .cards{
-        display:flex;
-        align-items: center;
-        overflow: hidden;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
         .first-card{
             padding: 0 0 0 10vw;
             display:flex;
@@ -30,5 +55,32 @@
                 font-weight: 300;
             }
         }
+    }
+}
+@media only screen and (max-width: 992px){
+  .exslider-container{
+    .space-holder {
+        position: static;
+        width: 100%;
+      }
+      .sticky {
+        position: static;
+        height: auto;
+        width: 100%;
+      }      
+      .horizontal {
+        position: static;
+        height: auto;
+        transform: translateX(0) !important;
+      }
+      .cards {
+        position: static;
+        height: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
     }
 }

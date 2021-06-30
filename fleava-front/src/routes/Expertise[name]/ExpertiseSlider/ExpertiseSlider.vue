@@ -1,12 +1,19 @@
 <template>
-    <div class="exslider-container" ref="cardsCont">
-        <div class="cards" ref="cards">
-            <div class="first-card" v-if="data.title && data.desc">
-                <h2>{{data.title}}</h2>
-                <p>{{data.desc}}</p>
-            </div>
-            <ExpertiseCard v-for="card in data.cards" :key="card.name" :data="card"/>
+    <div class="exslider-container">
+        <div class="space-holder">
+        <div class="sticky">
+        <div class="horizontal">
+            <section role="feed" class="cards">
+                    <div class="first-card" v-if="data.title && data.desc">
+                        <h2>{{data.title}}</h2>
+                        <p>{{data.desc}}</p>
+                    </div>
+                    <ExpertiseCard v-for="card in data.cards" :key="card.name" :data="card"/>
+
+            </section>
         </div>
+        </div>
+    </div>
     </div>
 </template>
 <script>
@@ -19,43 +26,37 @@ export default {
         data:Object
     },
     data: () => ({
-        observer: null,
-        options: {
-            rootMargin: '80px',
-            threshold: 1.0
-        },
-        contX: 0,
+        winWidth: window.innerWidth,
+        spaceHolder: document.querySelector('.space-holder'),
+        horizontal: document.querySelector('.horizontal')
     }),
     mounted() {
-        this.observer = new IntersectionObserver((entries)=> {
-            entries.forEach(entry => {
-                if(!entry.isIntersecting){
-                    console.log('out')
-                    this.$refs.cards.style.transform = 'translateX(0px)'
-                    return;
-                }
-                console.log('in')
-            })
-        }, this.options);
-        this.observer.observe(this.$refs.cardsCont);
-    },
-    created(){
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    destroyed () {
-        window.removeEventListener('scroll', this.handleScroll);
+        this.spaceHolder = document.querySelector('.space-holder');
+        this.horizontal = document.querySelector('.horizontal');
+        this.spaceHolder.style.height = `calc(${this.calcDynamicHeight(this.horizontal)}px - 20vw - 300px)`;
+        window.addEventListener('scroll', () => {
+            const sticky = document.querySelector('.sticky');
+            this.horizontal.style.transform = `translateX(-${sticky.offsetTop}px)`;
+        });
+
+        window.addEventListener('resize', () => {
+            this.winWidth = window.innerWidth
+            this.spaceHolder.style.height = `calc(${this.calcDynamicHeight(this.horizontal)}px - 20vw - 300px)`;
+            if(this.winWidth < 992){
+                this.spaceHolder.style.height = `auto`;
+                window.removeEventListener('scroll', () => {
+                    const sticky = document.querySelector('.sticky');
+                    this.horizontal.style.transform = `translateX(-${sticky.offsetTop}px)`;
+                });
+            }
+        });
     },
     methods: {
-        handleScroll (e) {
-            let width = this.$refs.cards.getBoundingClientRect().width;
-            // console.log(this.$refs.cardsCont.getBoundingClientRect())
-            if(this.$refs.cardsCont.getBoundingClientRect().top <= -160 && this.contX > -width){
-                window.scrollTo(0,this.$refs.cardsCont.offsetTop + 160)
-                this.contX -= 50;
-                // console.log(this.contX)
-                this.$refs.cards.style.transform = `translateX(${this.contX}px)`
-
-            }
+        calcDynamicHeight(ref) {
+            const vw = window.innerWidth;
+            const vh = window.innerHeight;
+            const objectWidth = ref.scrollWidth;
+            return objectWidth - vw + vh + 150; 
         }
     }
     
