@@ -86,7 +86,8 @@ export default {
             document.querySelector('.carousel').scrollLeft = this.scrollLeft - walk;
         },
         dragCircle(e){
-            this.circle.x = e.clientX + document.querySelector('.carousel').scrollLeft;
+            this.circle.x = e.clientX + document.querySelector('.carousel').scrollLeft + (window.innerWidth * 0.13);
+            console.log(this.circle.x)
             this.circle.y = e.layerY;
             if(e.path.length >= 10){
                 this.circle.active = true;

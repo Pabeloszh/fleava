@@ -1,7 +1,10 @@
 .aw-video-container{
+    position:relative;
+
     background-color:#212028;
     cursor:pointer;
-    div{
+    div:first-child{
+        position:relative;
         transform: translateY(-35%);
         overflow: hidden;
         width: 83%;
@@ -16,7 +19,7 @@
 }
 @media only screen and (max-width:992px){
     .aw-video-container{
-        div{
+        div:first-child{
             transform: translateY(-15%);
             height: 60vh;
             width:100%;
