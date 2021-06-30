@@ -4,7 +4,7 @@
             <img src="https://fleava.com/assets/img/general/fleava-logo.svg" alt="logo">
         </router-link>
         <div>
-            <router-link to="/">ABOUT</router-link>
+            <router-link to="/about">ABOUT</router-link>
             <router-link to="/works">WORKS</router-link>
         </div>
     </div>

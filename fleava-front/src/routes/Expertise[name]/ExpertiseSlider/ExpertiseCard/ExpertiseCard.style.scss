@@ -2,9 +2,9 @@
     display:flex;
     align-items: center;
     width:100vw;
-    padding: 0 10vw;
+    padding-left:10vw;
     .image{
-        width:40vw;
+        width:50vw;
         height:80vh;
         img{
             width:100%;
@@ -13,9 +13,10 @@
         }
     }
     .desc{
-        width: calc(25vw + 300px);
-        padding: 0 15vw 0 5vw;
+        width: calc(25vw + 400px);
+        padding: 0 5vw;
         font-family: 'Graphik', Arial, Helvetica, sans-serif;
+        color:#fff;
         h3{
             opacity: .6;
             font-size: 11px;
@@ -36,4 +37,25 @@
             line-height: 1.8;
         }
     }
+}
+@media only screen and (max-width:992px){
+    .excard-container{
+        flex-direction: column;
+        padding-left: 0;
+        .image, .desc{
+            width:100%
+        }
+        .image{
+            height: 50vh;
+        }
+        .desc{
+            padding: 80px 10vw;
+            h2{
+                font-size: 28px;
+                line-height: 1.4;
+            
+            }
+        }
+    }
+
 }

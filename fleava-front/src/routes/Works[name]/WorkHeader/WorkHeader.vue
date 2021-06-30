@@ -28,10 +28,10 @@ export default {
         data: Object,
     },
     created () {
-        window.addEventListener('scroll', this.handleScroll);
+        this.data.mainImg && window.addEventListener('scroll', this.handleScroll);
     },
     destroyed () {
-        window.removeEventListener('scroll', this.handleScroll);
+        this.data.mainImg && window.removeEventListener('scroll', this.handleScroll);
     },
     mounted() {
         this.observer = new IntersectionObserver((entries)=> {
